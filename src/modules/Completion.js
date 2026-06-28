@@ -15,9 +15,9 @@ class CompletionModule {
   constructor(http) {
     this._http = http;
 
-    // post v1/complete
+    // POST v1/complete
     this.complete = makeOperation(http, "v1", "POST", "complete");
-    // get v1/openserv/models
+    // GET v1/openserv/models
     this.openServModels = makeOperation(http, "v1", "GET", "openserv/models");
   }
 }

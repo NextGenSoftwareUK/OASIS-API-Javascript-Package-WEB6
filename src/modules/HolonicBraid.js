@@ -15,9 +15,9 @@ class HolonicBraidModule {
   constructor(http) {
     this._http = http;
 
-    // get v1/holonic-braid/graph/{taskType}
+    // GET v1/holonic-braid/graph/{taskType}
     this.getGraph = makeOperation(http, "v1/holonic-braid", "GET", "graph/{taskType}");
-    // post v1/holonic-braid/graph/{taskType}
+    // POST v1/holonic-braid/graph/{taskType}
     this.saveGraph = makeOperation(http, "v1/holonic-braid", "POST", "graph/{taskType}");
   }
 }

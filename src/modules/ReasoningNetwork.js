@@ -15,13 +15,13 @@ class ReasoningNetworkModule {
   constructor(http) {
     this._http = http;
 
-    // post v1/reasoning-network/dispatch
+    // POST v1/reasoning-network/dispatch
     this.dispatch = makeOperation(http, "v1/reasoning-network", "POST", "dispatch");
-    // get v1/reasoning-network/agents
+    // GET v1/reasoning-network/agents
     this.getAgents = makeOperation(http, "v1/reasoning-network", "GET", "agents");
-    // post v1/reasoning-network/agents
+    // POST v1/reasoning-network/agents
     this.registerAgent = makeOperation(http, "v1/reasoning-network", "POST", "agents");
-    // post v1/reasoning-network/agents/seed-openserv
+    // POST v1/reasoning-network/agents/seed-openserv
     this.seedOpenServAgents = makeOperation(http, "v1/reasoning-network", "POST", "agents/seed-openserv");
   }
 }

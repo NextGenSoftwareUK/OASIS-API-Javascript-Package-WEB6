@@ -4,27 +4,74 @@ Source controller: [`ImagesController.cs`](https://github.com/NextGenSoftwareUK/
 Route prefix: `v1/images`
 1 operation(s).
 
-All methods are generated 1:1 from the controller's real `[Http*]` routes (see
-[Conventions](../README.md#calling-any-endpoint)). They take a single args
-object: any key matching a `{token}` in the route is substituted into the
-URL; everything else becomes the query string (GET/DELETE) or JSON body
-(POST/PUT).
+Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
-## Methods
+```ts
+{
+  isError: boolean;
+  isWarning: boolean;
+  message: string;
+  errorCode?: string;
+  result: T; // see each endpoint's Response section below
+}
+```
 
-| Method | HTTP | Route | Route params | Query params | Body |
-| --- | --- | --- | --- | --- | --- |
-| `generate` | POST | `v1/images/generate` | – | – | remaining args |
+## Operations
 
-## Example
+### `generate`
+
+Generates an image via the requested provider (StabilityAI or OpenAI). POST https://api.web6.oasisomniverse.one/v1/images/generate
+
+**POST** `v1/images/generate`
+
+**Request**
+
+Body type: `ImageGenerationRequest`
+
+| Field | Type |
+| --- | --- |
+| `Prompt` | `string` |
+| `Provider` | `AIProviderType` |
+| `Model` | `string` |
+| `Size` | `string` |
+| `AspectRatio` | `string` |
+| `OutputFormat` | `string` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `ImageGenerationResponse`
+
+| Field | Type |
+| --- | --- |
+| `Provider` | `string` |
+| `Model` | `string` |
+| `ImageBase64` | `string` |
+| `OutputFormat` | `string` |
+
+**Example**
 
 ```js
-const web6 = new Web6Client({ baseUrl: '...' });
-web6.setToken(jwtToken); // reuse a WEB4 JWT
-
 const { isError, message, result } = await web6.images.generate({
-    /* ...other fields per the request body */
+    prompt: "example string",
+    provider: {  },
+    model: "example string",
+    size: "example string",
+    aspectRatio: "example string",
+    outputFormat: "example string"
   });
 if (isError) throw new Error(message);
 console.log(result);
 ```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": { "Provider": "example string", "Model": "example string", "ImageBase64": "example string", "OutputFormat": "example string" }
+}
+```
+

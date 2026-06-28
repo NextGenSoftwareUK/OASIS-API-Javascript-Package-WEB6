@@ -15,7 +15,7 @@ class ImagesModule {
   constructor(http) {
     this._http = http;
 
-    // post v1/images/generate
+    // POST v1/images/generate
     this.generate = makeOperation(http, "v1/images", "POST", "generate");
   }
 }

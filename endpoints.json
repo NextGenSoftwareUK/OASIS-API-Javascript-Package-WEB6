@@ -3,12 +3,28 @@
     "route_prefix": "v1",
     "ops": {
       "Complete": {
-        "verb": "post",
-        "route": "complete"
+        "verb": "POST",
+        "route": "complete",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "CompletionRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Routes a completion request to whichever AI provider/model best fits, normalising the response. POST https://api.web6.oasisomniverse.one/v1/complete"
       },
       "OpenServModels": {
-        "verb": "get",
-        "route": "openserv/models"
+        "verb": "GET",
+        "route": "openserv/models",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<OpenServModel>"
+        },
+        "summary": "Lists the models reachable through the OpenServ provider (provider: \"openserv\"), i.e. the full SERV catalog spanning OpenAI, Anthropic, Google, xAI, Qwen and DeepSeek behind one SERV_API_KEY. GET https://api.web6.oasisomniverse.one/v1/openserv/models"
       }
     }
   },
@@ -16,12 +32,38 @@
     "route_prefix": "v1/holonic-braid",
     "ops": {
       "GetGraph": {
-        "verb": "get",
-        "route": "graph/{taskType}"
+        "verb": "GET",
+        "route": "graph/{taskType}",
+        "routeParams": [
+          {
+            "name": "taskType",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicBraidGraphDto"
+        },
+        "summary": "Looks up the shared reasoning graph already generated for a task type, if any."
       },
       "SaveGraph": {
-        "verb": "post",
-        "route": "graph/{taskType}"
+        "verb": "POST",
+        "route": "graph/{taskType}",
+        "routeParams": [
+          {
+            "name": "taskType",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "SaveGraphRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicBraidGraphDto"
+        },
+        "summary": "Seeds the shared library with a reasoning graph for a task type (the \"generator\" step of the two-stage BRAID protocol)."
       }
     }
   },
@@ -29,12 +71,44 @@
     "route_prefix": "v1/holonic-memory",
     "ops": {
       "GetEarthHolon": {
-        "verb": "get",
-        "route": "earth"
+        "verb": "GET",
+        "route": "earth",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicMemoryHolonDto"
+        },
+        "summary": "The Holonic BRAID fractal memory hierarchy - Session → Agent → User → Group → Neighbourhood → District → City → County → Country → Continent → Earth. Create/get holons at any level, set the membrane rule that governs what propagates upward, record memory, and trigger propagation one hop at a time."
       },
       "GetOrCreateHolon": {
-        "verb": "post",
+        "verb": "POST",
         "route": "holons",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "level",
+            "type": "HolonicMemoryLevel",
+            "optional": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "parentHolonId",
+            "type": "Guid",
+            "optional": false
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicMemoryHolonDto"
+        },
+        "summary": null,
         "query": [
           "level",
           "name",
@@ -42,16 +116,55 @@
         ]
       },
       "SetMembraneRule": {
-        "verb": "put",
-        "route": "holons/{holonId}/membrane-rule"
+        "verb": "PUT",
+        "route": "holons/{holonId}/membrane-rule",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "MembraneRule",
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": null
       },
       "RecordMemory": {
-        "verb": "post",
-        "route": "holons/{holonId}/memory"
+        "verb": "POST",
+        "route": "holons/{holonId}/memory",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "HolonicMemoryItem",
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": null
       },
       "Propagate": {
-        "verb": "post",
-        "route": "holons/{childHolonId}/propagate"
+        "verb": "POST",
+        "route": "holons/{childHolonId}/propagate",
+        "routeParams": [
+          {
+            "name": "childHolonId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "int"
+        },
+        "summary": "Propagates whatever the child holon's membrane rule permits up to its parent (a single hop)."
       }
     }
   },
@@ -59,8 +172,16 @@
     "route_prefix": "v1/images",
     "ops": {
       "Generate": {
-        "verb": "post",
-        "route": "generate"
+        "verb": "POST",
+        "route": "generate",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "ImageGenerationRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "ImageGenerationResponse"
+        },
+        "summary": "Generates an image via the requested provider (StabilityAI or OpenAI). POST https://api.web6.oasisomniverse.one/v1/images/generate"
       }
     }
   },
@@ -68,16 +189,40 @@
     "route_prefix": "v1/orchestrators",
     "ops": {
       "RegisterAdapter": {
-        "verb": "post",
-        "route": ""
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "OrchestratorAdapterConfig",
+        "responseType": {
+          "wrapper": null,
+          "inner": "OrchestratorAdapterConfig"
+        },
+        "summary": "Aggregates every agent protocol/orchestration framework (MCP, A2A, LangChain, AutoGen, CrewAI, Semantic Kernel, or any generic webhook) behind WEB6's unified interface. Register an external orchestrator once, then invoke it the same way you'd call any AI provider through /v1/complete."
       },
       "GetAdapters": {
-        "verb": "get",
-        "route": ""
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<OrchestratorAdapterConfig>"
+        },
+        "summary": null
       },
       "Invoke": {
-        "verb": "post",
-        "route": "invoke"
+        "verb": "POST",
+        "route": "invoke",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "OrchestratorInvokeRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "OrchestratorInvokeResponse"
+        },
+        "summary": null
       }
     }
   },
@@ -85,20 +230,52 @@
     "route_prefix": "v1/reasoning-network",
     "ops": {
       "RegisterAgent": {
-        "verb": "post",
-        "route": "agents"
+        "verb": "POST",
+        "route": "agents",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "ReasoningAgentMetadata",
+        "responseType": {
+          "wrapper": null,
+          "inner": "ReasoningAgentMetadata"
+        },
+        "summary": "Registers a new reasoning agent (e.g. a specific provider/model) with the network."
       },
       "GetAgents": {
-        "verb": "get",
-        "route": "agents"
+        "verb": "GET",
+        "route": "agents",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ReasoningAgentMetadata>"
+        },
+        "summary": "Lists every reasoning agent currently registered with FAHRN, with its live composite scoring metadata."
       },
       "SeedOpenServAgents": {
-        "verb": "post",
-        "route": "agents/seed-openserv"
+        "verb": "POST",
+        "route": "agents/seed-openserv",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ReasoningAgentMetadata>"
+        },
+        "summary": "Seeds FAHRN with one reasoning agent per model in the OpenServ SERV catalog (skips any AgentName already registered), so the network can immediately score/route/braid across every OpenServ-reachable model (OpenAI, Anthropic, Google, xAI, Qwen, DeepSeek) behind a single SERV_API_KEY. Safe to call repeatedly. POST https://api.web6.oasisomniverse.one/v1/reasoning-network/agents/seed-openserv"
       },
       "Dispatch": {
-        "verb": "post",
-        "route": "dispatch"
+        "verb": "POST",
+        "route": "dispatch",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "DispatchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "DispatchResult"
+        },
+        "summary": "Dispatches a problem to the reasoning network. The controller agent scores eligible agents, picks Serial/Parallel/Decomposed execution, runs loop detection, assembles the final Mermaid plan and updates every involved agent's score via EMA before returning."
       }
     }
   }

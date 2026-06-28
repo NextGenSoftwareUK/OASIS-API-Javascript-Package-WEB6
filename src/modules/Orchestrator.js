@@ -15,11 +15,11 @@ class OrchestratorModule {
   constructor(http) {
     this._http = http;
 
-    // get v1/orchestrators/
+    // GET v1/orchestrators/
     this.getAdapters = makeOperation(http, "v1/orchestrators", "GET", "");
-    // post v1/orchestrators/invoke
+    // POST v1/orchestrators/invoke
     this.invoke = makeOperation(http, "v1/orchestrators", "POST", "invoke");
-    // post v1/orchestrators/
+    // POST v1/orchestrators/
     this.registerAdapter = makeOperation(http, "v1/orchestrators", "POST", "");
   }
 }
