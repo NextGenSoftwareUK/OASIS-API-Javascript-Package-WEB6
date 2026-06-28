@@ -7,9 +7,6 @@ export declare class HolonicMemoryModule {
   /** GET v1/holonic-memory/earth */
   getEarthHolon(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST v1/holonic-memory/holons */
-  getOrCreateHolon(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST v1/holonic-memory/holons/{childHolonId}/propagate */
   propagate(args?: Record<string, any>): Promise<OASISResponse>;
 

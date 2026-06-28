@@ -12,10 +12,10 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `complete` | POST | `v1/complete` | – |
-| `openServModels` | GET | `v1/openserv/models` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `complete` | POST | `v1/complete` | – | – | remaining args |
+| `openServModels` | GET | `v1/openserv/models` | – | – | – |
 
 ## Example
 

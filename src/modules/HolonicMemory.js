@@ -17,8 +17,8 @@ class HolonicMemoryModule {
 
     // get v1/holonic-memory/earth
     this.getEarthHolon = makeOperation(http, "v1/holonic-memory", "GET", "earth");
-    // post v1/holonic-memory/holons
-    this.getOrCreateHolon = makeOperation(http, "v1/holonic-memory", "POST", "holons");
+    // post v1/holonic-memory/holons (query: level, name, parentHolonId)
+    this.getOrCreateHolon = makeOperation(http, "v1/holonic-memory", "POST", "holons", {"query":["level","name","parentHolonId"]});
     // post v1/holonic-memory/holons/{childHolonId}/propagate
     this.propagate = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate");
     // post v1/holonic-memory/holons/{holonId}/memory

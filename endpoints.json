@@ -2,48 +2,104 @@
   "CompletionController.cs": {
     "route_prefix": "v1",
     "ops": {
-      "Complete": { "verb": "post", "route": "complete" },
-      "OpenServModels": { "verb": "get", "route": "openserv/models" }
+      "Complete": {
+        "verb": "post",
+        "route": "complete"
+      },
+      "OpenServModels": {
+        "verb": "get",
+        "route": "openserv/models"
+      }
     }
   },
   "HolonicBraidController.cs": {
     "route_prefix": "v1/holonic-braid",
     "ops": {
-      "GetGraph": { "verb": "get", "route": "graph/{taskType}" },
-      "SaveGraph": { "verb": "post", "route": "graph/{taskType}" }
+      "GetGraph": {
+        "verb": "get",
+        "route": "graph/{taskType}"
+      },
+      "SaveGraph": {
+        "verb": "post",
+        "route": "graph/{taskType}"
+      }
     }
   },
   "HolonicMemoryController.cs": {
     "route_prefix": "v1/holonic-memory",
     "ops": {
-      "GetEarthHolon": { "verb": "get", "route": "earth" },
-      "GetOrCreateHolon": { "verb": "post", "route": "holons" },
-      "SetMembraneRule": { "verb": "put", "route": "holons/{holonId}/membrane-rule" },
-      "RecordMemory": { "verb": "post", "route": "holons/{holonId}/memory" },
-      "Propagate": { "verb": "post", "route": "holons/{childHolonId}/propagate" }
+      "GetEarthHolon": {
+        "verb": "get",
+        "route": "earth"
+      },
+      "GetOrCreateHolon": {
+        "verb": "post",
+        "route": "holons",
+        "query": [
+          "level",
+          "name",
+          "parentHolonId"
+        ]
+      },
+      "SetMembraneRule": {
+        "verb": "put",
+        "route": "holons/{holonId}/membrane-rule"
+      },
+      "RecordMemory": {
+        "verb": "post",
+        "route": "holons/{holonId}/memory"
+      },
+      "Propagate": {
+        "verb": "post",
+        "route": "holons/{childHolonId}/propagate"
+      }
     }
   },
   "ImagesController.cs": {
     "route_prefix": "v1/images",
     "ops": {
-      "Generate": { "verb": "post", "route": "generate" }
+      "Generate": {
+        "verb": "post",
+        "route": "generate"
+      }
     }
   },
   "OrchestratorController.cs": {
     "route_prefix": "v1/orchestrators",
     "ops": {
-      "RegisterAdapter": { "verb": "post", "route": "" },
-      "GetAdapters": { "verb": "get", "route": "" },
-      "Invoke": { "verb": "post", "route": "invoke" }
+      "RegisterAdapter": {
+        "verb": "post",
+        "route": ""
+      },
+      "GetAdapters": {
+        "verb": "get",
+        "route": ""
+      },
+      "Invoke": {
+        "verb": "post",
+        "route": "invoke"
+      }
     }
   },
   "ReasoningNetworkController.cs": {
     "route_prefix": "v1/reasoning-network",
     "ops": {
-      "RegisterAgent": { "verb": "post", "route": "agents" },
-      "GetAgents": { "verb": "get", "route": "agents" },
-      "SeedOpenServAgents": { "verb": "post", "route": "agents/seed-openserv" },
-      "Dispatch": { "verb": "post", "route": "dispatch" }
+      "RegisterAgent": {
+        "verb": "post",
+        "route": "agents"
+      },
+      "GetAgents": {
+        "verb": "get",
+        "route": "agents"
+      },
+      "SeedOpenServAgents": {
+        "verb": "post",
+        "route": "agents/seed-openserv"
+      },
+      "Dispatch": {
+        "verb": "post",
+        "route": "dispatch"
+      }
     }
   }
 }

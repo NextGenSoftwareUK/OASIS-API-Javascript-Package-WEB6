@@ -57,6 +57,22 @@ test('GET requests send remaining args as query string', async () => {
   assert.equal(call.init.method, 'GET');
 });
 
+test('FromQuery params on a POST action are sent on the URL, not the body', async () => {
+  const fetchImpl = fakeFetch([{ match: 'v1/holonic-memory/holons', body: { isError: false, result: { id: 'h1' } } }]);
+  const web6 = new Web6Client({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
+
+  // GetOrCreateHolon(level, name, parentHolonId) are all [FromQuery] despite being a POST action.
+  await web6.holonicMemory.getOrCreateHolon({ level: 'Local', name: 'London', parentHolonId: 'earth-1' });
+
+  const call = fetchImpl.calls[0];
+  assert.equal(call.init.method, 'POST');
+  assert.equal(call.init.body, undefined);
+  assert.match(call.url, /^https:\/\/example\.test\/v1\/holonic-memory\/holons\?/);
+  assert.match(call.url, /level=Local/);
+  assert.match(call.url, /name=London/);
+  assert.match(call.url, /parentHolonId=earth-1/);
+});
+
 test('missing required route param throws a clear error', async () => {
   const web6 = new Web6Client({ baseUrl: 'https://example.test', persistSession: false, fetchImpl: fakeFetch([]) });
   await assert.rejects(() => web6.holonicMemory.setMembraneRule({}), /Missing required route parameter "holonId"/);

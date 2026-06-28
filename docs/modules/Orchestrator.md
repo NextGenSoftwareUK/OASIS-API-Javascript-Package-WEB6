@@ -12,11 +12,11 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `getAdapters` | GET | `v1/orchestrators` | – |
-| `invoke` | POST | `v1/orchestrators/invoke` | – |
-| `registerAdapter` | POST | `v1/orchestrators` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `getAdapters` | GET | `v1/orchestrators` | – | – | – |
+| `invoke` | POST | `v1/orchestrators/invoke` | – | – | remaining args |
+| `registerAdapter` | POST | `v1/orchestrators` | – | – | remaining args |
 
 ## Example
 

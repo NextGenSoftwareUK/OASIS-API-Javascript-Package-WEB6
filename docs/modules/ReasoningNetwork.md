@@ -12,12 +12,12 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `dispatch` | POST | `v1/reasoning-network/dispatch` | – |
-| `getAgents` | GET | `v1/reasoning-network/agents` | – |
-| `registerAgent` | POST | `v1/reasoning-network/agents` | – |
-| `seedOpenServAgents` | POST | `v1/reasoning-network/agents/seed-openserv` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `dispatch` | POST | `v1/reasoning-network/dispatch` | – | – | remaining args |
+| `getAgents` | GET | `v1/reasoning-network/agents` | – | – | – |
+| `registerAgent` | POST | `v1/reasoning-network/agents` | – | – | remaining args |
+| `seedOpenServAgents` | POST | `v1/reasoning-network/agents/seed-openserv` | – | – | remaining args |
 
 ## Example
 

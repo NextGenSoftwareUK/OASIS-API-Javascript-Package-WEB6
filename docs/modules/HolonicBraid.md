@@ -12,10 +12,10 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `getGraph` | GET | `v1/holonic-braid/graph/{taskType}` | `taskType` |
-| `saveGraph` | POST | `v1/holonic-braid/graph/{taskType}` | `taskType` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `getGraph` | GET | `v1/holonic-braid/graph/{taskType}` | `taskType` | – | – |
+| `saveGraph` | POST | `v1/holonic-braid/graph/{taskType}` | `taskType` | – | remaining args |
 
 ## Example
 

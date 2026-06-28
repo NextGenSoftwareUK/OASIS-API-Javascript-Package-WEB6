@@ -12,13 +12,13 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `getEarthHolon` | GET | `v1/holonic-memory/earth` | – |
-| `getOrCreateHolon` | POST | `v1/holonic-memory/holons` | – |
-| `propagate` | POST | `v1/holonic-memory/holons/{childHolonId}/propagate` | `childHolonId` |
-| `recordMemory` | POST | `v1/holonic-memory/holons/{holonId}/memory` | `holonId` |
-| `setMembraneRule` | PUT | `v1/holonic-memory/holons/{holonId}/membrane-rule` | `holonId` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `getEarthHolon` | GET | `v1/holonic-memory/earth` | – | – | – |
+| `getOrCreateHolon` | POST | `v1/holonic-memory/holons` | – | `level`, `name`, `parentHolonId` | remaining args |
+| `propagate` | POST | `v1/holonic-memory/holons/{childHolonId}/propagate` | `childHolonId` | – | remaining args |
+| `recordMemory` | POST | `v1/holonic-memory/holons/{holonId}/memory` | `holonId` | – | remaining args |
+| `setMembraneRule` | PUT | `v1/holonic-memory/holons/{holonId}/membrane-rule` | `holonId` | – | remaining args |
 
 ## Example
 

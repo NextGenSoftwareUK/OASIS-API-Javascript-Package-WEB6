@@ -43,7 +43,12 @@ property on the client (`web6.completion`, `web6.images`,
 - Any key matching a `{token}` in the route template is consumed and
   substituted into the URL (case-insensitive match).
 - Any remaining keys become the query string (GET/DELETE) or JSON body
-  (POST/PUT).
+  (POST/PUT) - **matching the real `[FromQuery]`/`[FromBody]` binding of the
+  underlying C# action**, not just the HTTP verb. `endpoints.json` records
+  exactly which arg names are query-bound per operation (see
+  [`docs/`](./docs/README.md) for the per-method breakdown), so a `POST`
+  action that binds some params from the query string (like
+  `HolonicMemoryController.GetOrCreateHolon`) still sends those on the URL.
 
 ```js
 // GET v1/holonic-braid/graph/{taskType} -> taskType is consumed as a route token
@@ -51,6 +56,10 @@ const graph = await web6.holonicBraid.getGraph({ taskType: 'research' });
 
 // PUT v1/holonic-memory/holons/{holonId}/membrane-rule -> holonId consumed, rest becomes the body
 await web6.holonicMemory.setMembraneRule({ holonId, allow: ['propagate-up'] });
+
+// POST v1/holonic-memory/holons -> level/name/parentHolonId are all [FromQuery]
+// even though this is a POST, so they're sent on the URL, not as a JSON body
+const holon = await web6.holonicMemory.getOrCreateHolon({ level: 'Local', name: 'London', parentHolonId: earthId });
 ```
 
 Every response has the shape:
@@ -100,7 +109,7 @@ const image = await web6.images.generate({ prompt: 'a holonic crystal city at da
 
 ```js
 const earth = await web6.holonicMemory.getEarthHolon();
-const holon = await web6.holonicMemory.getOrCreateHolon({ name: 'London', parentHolonId: earth.result.id });
+const holon = await web6.holonicMemory.getOrCreateHolon({ level: 'Local', name: 'London', parentHolonId: earth.result.id });
 await web6.holonicMemory.recordMemory({ holonId: holon.result.id, content: 'New observation...' });
 await web6.holonicMemory.propagate({ childHolonId: holon.result.id });
 ```
