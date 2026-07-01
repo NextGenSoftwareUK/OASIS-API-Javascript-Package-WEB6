@@ -1,6 +1,7 @@
 {
-  "name": "web6-oasis-ai-layer-api",
+  "name": "@oasisomniverse/web6-api",
   "version": "1.0.0",
+  "publishConfig": { "access": "public" },
   "description": "Isomorphic (Node + browser) JavaScript/TypeScript-friendly client for the WEB6 OASIS AI Layer API - full coverage of the OASIS2 WEB6 WebAPI (unified AI completion/chat across every provider, image generation, the Holonic BRAID fractal memory hierarchy and shared reasoning-graph library, multi-agent orchestrator adapters for MCP/A2A/LangChain/AutoGen/CrewAI/Semantic Kernel, and FAHRN - the Fractal Adaptive Holonic Reasoning Network for agent scoring/routing/dispatch).",
   "main": "index.js",
   "module": "index.mjs",

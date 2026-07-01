@@ -1,4 +1,4 @@
-# web6-oasis-ai-layer-api
+# @oasisomniverse/web6-api
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
 **WEB6 OASIS AI Layer API** - full coverage of the OASIS2 WEB6 WebAPI: unified
@@ -14,14 +14,14 @@ browser.
 ## Installation
 
 ```bash
-npm install web6-oasis-ai-layer-api
+npm install @oasisomniverse/web6-api
 ```
 
 ## Quick start
 
 ```js
-const { Web6Client } = require('web6-oasis-ai-layer-api');
-// or: import { Web6Client } from 'web6-oasis-ai-layer-api';
+const { Web6Client } = require('@oasisomniverse/web6-api');
+// or: import { Web6Client } from '@oasisomniverse/web6-api';
 
 const web6 = new Web6Client({ baseUrl: 'https://api.web6.oasisomniverse.one' });
 

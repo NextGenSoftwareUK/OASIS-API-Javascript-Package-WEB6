@@ -7,7 +7,7 @@ const { attachGeneratedModules } = require('./modules/index');
 /**
  * Main SDK entry point. Works in Node 18+ and any modern browser.
  *
- *   const { Web6Client } = require('web6-oasis-ai-layer-api');
+ *   const { Web6Client } = require('@oasisomniverse/web6-api');
  *   const web6 = new Web6Client({ baseUrl: 'https://api.web6.oasisomniverse.one' });
  *   web6.setToken(jwtToken); // reuse a WEB4 OASIS JWT - WEB6 has no auth of its own
  *   const { result } = await web6.completion.complete({ avatarId, messages: [...] });
