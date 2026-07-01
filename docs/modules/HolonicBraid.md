@@ -1,6 +1,6 @@
 # HolonicBraid — `web6.holonicBraid`
 
-Source controller: [`HolonicBraidController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/HolonicBraidController.cs)
+Source controller: [`HolonicBraidController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/HolonicBraidController.cs)
 Route prefix: `v1/holonic-braid`
 2 operation(s).
 

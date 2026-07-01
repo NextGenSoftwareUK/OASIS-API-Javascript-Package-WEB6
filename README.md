@@ -1,7 +1,7 @@
 # @oasisomniverse/web6-api
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB6 OASIS AI Layer API** - full coverage of the OASIS2 WEB6 WebAPI: unified
+**WEB6 OASIS AI Layer API** - full coverage of the OASIS WEB6 WebAPI: unified
 AI completion/chat across every provider (OpenAI, Anthropic, Google Gemini,
 xAI Grok, Qwen, DeepSeek, OpenServ, ...), image generation, the Holonic BRAID
 fractal memory hierarchy and shared reasoning-graph library, multi-agent
@@ -10,6 +10,24 @@ the Reasoning Network (FAHRN) for agent registration, scoring and dispatch.
 
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
+
+## About WEB6
+
+> **"ONE API. EVERY AI."**
+
+WEB6 is the AI layer of the OASIS Omniverse — a single unified endpoint that routes across OpenAI, Anthropic, Google, Meta, Mistral and dozens of other providers with zero per-provider refactoring. What sets it apart from a generic AI proxy is that every request is grounded in real identity and ecosystem context: it layers on top of WEB4 (avatar, karma, data) and WEB5 (cross-world OAPPs, the holon graph), plus proprietary tech like the Holonic BRAID fractal memory hierarchy and FAHRN, a self-optimizing reasoning mesh - making it, provider-for-provider, one of the most contextually rich AI APIs available.
+
+WEB6 is built directly on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** and **[WEB5](https://www.npmjs.com/package/@oasisomniverse/web5-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+
+## About The OASIS Omniverse
+
+The OASIS (Open Advanced Sensory Immersion System) is the universal interoperability layer connecting all of WEB2 and WEB3 — every blockchain, database, cloud provider and protocol — into one unified, fault-tolerant API. Rather than picking a single tech stack, the OASIS harnesses the best of every provider (auto-failover, auto-load-balancing, auto-replication) so nothing is ever a single point of failure, and hides the complexity behind one intuitive API so you never need to learn a new stack again — even as underlying tech evolves, your app keeps working with zero changes.
+
+At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
+
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+
+👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 ## Installation
 
@@ -35,7 +53,7 @@ console.log(result);
 
 ## Calling any endpoint
 
-Every controller on the OASIS2 WEB6 WebAPI is reachable as a lowerCamel
+Every controller on the OASIS WEB6 WebAPI is reachable as a lowerCamel
 property on the client (`web6.completion`, `web6.images`,
 `web6.holonicMemory`, `web6.holonicBraid`, `web6.orchestrator`,
 `web6.reasoningNetwork`). Every generated method takes a single args object:

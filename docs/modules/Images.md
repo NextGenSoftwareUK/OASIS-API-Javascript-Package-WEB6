@@ -1,6 +1,6 @@
 # Images — `web6.images`
 
-Source controller: [`ImagesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/ImagesController.cs)
+Source controller: [`ImagesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/ImagesController.cs)
 Route prefix: `v1/images`
 1 operation(s).
 

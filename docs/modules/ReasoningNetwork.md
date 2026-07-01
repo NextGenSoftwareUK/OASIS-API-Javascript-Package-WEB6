@@ -1,6 +1,6 @@
 # ReasoningNetwork — `web6.reasoningNetwork`
 
-Source controller: [`ReasoningNetworkController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/ReasoningNetworkController.cs)
+Source controller: [`ReasoningNetworkController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/ReasoningNetworkController.cs)
 Route prefix: `v1/reasoning-network`
 4 operation(s).
 

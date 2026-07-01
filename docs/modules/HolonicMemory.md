@@ -1,6 +1,6 @@
 # HolonicMemory — `web6.holonicMemory`
 
-Source controller: [`HolonicMemoryController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/HolonicMemoryController.cs)
+Source controller: [`HolonicMemoryController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/HolonicMemoryController.cs)
 Route prefix: `v1/holonic-memory`
 5 operation(s).
 

@@ -1,6 +1,6 @@
 # Orchestrator — `web6.orchestrator`
 
-Source controller: [`OrchestratorController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/OrchestratorController.cs)
+Source controller: [`OrchestratorController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/OrchestratorController.cs)
 Route prefix: `v1/orchestrators`
 3 operation(s).
 
