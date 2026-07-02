@@ -1,9 +1,9 @@
-# @oasisomniverse/web6-api
+﻿# @oasisomniverse/web6-api
 
 - [@oasisomniverse/web6-api](#oasisomniverseweb6-api)
-  - [About WEB6](#about-web6)
+  - [About WEB 6](#about-web-6)
   - [About The OASIS Omniverse](#about-the-oasis-omniverse)
-  - [Benefits Of Building On The WEB6 AI Layer API](#benefits-of-building-on-the-web6-ai-layer-api)
+  - [Benefits Of Building On The WEB 6 AI Layer API](#benefits-of-building-on-the-web-6-ai-layer-api)
   - [WEB 6 AI Layer API Packages](#web-6-ai-layer-api-packages)
     - [Javascript](#javascript)
     - [C#](#c)
@@ -19,7 +19,7 @@
   - [License](#license)
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB6 OASIS AI Layer API** - full coverage of the OASIS WEB6 WebAPI: unified
+**WEB 6 OASIS AI Layer API** - full coverage of the OASIS WEB 6 WebAPI: unified
 AI completion/chat across every provider (OpenAI, Anthropic, Google Gemini,
 xAI Grok, Qwen, DeepSeek, OpenServ, ...), image generation, the Holonic BRAID
 fractal memory hierarchy and shared reasoning-graph library, multi-agent
@@ -29,13 +29,13 @@ the Reasoning Network (FAHRN) for agent registration, scoring and dispatch.
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
 
-## About WEB6
+## About WEB 6
 
 > **"ONE API. EVERY AI."**
 
-WEB6 is the AI layer of the OASIS Omniverse — a single unified endpoint that routes across OpenAI, Anthropic, Google, Meta, Mistral and dozens of other providers with zero per-provider refactoring. What sets it apart from a generic AI proxy is that every request is grounded in real identity and ecosystem context: it layers on top of WEB4 (avatar, karma, data) and WEB5 (cross-world OAPPs, the holon graph), plus proprietary tech like the Holonic BRAID fractal memory hierarchy and FAHRN, a self-optimizing reasoning mesh - making it, provider-for-provider, one of the most contextually rich AI APIs available.
+WEB 6 is the AI layer of the OASIS Omniverse — a single unified endpoint that routes across OpenAI, Anthropic, Google, Meta, Mistral and dozens of other providers with zero per-provider refactoring. What sets it apart from a generic AI proxy is that every request is grounded in real identity and ecosystem context: it layers on top of WEB 4 (avatar, karma, data) and WEB 5 (cross-world OAPPs, the holon graph), plus proprietary tech like the Holonic BRAID fractal memory hierarchy and FAHRN, a self-optimizing reasoning mesh - making it, provider-for-provider, one of the most contextually rich AI APIs available.
 
-WEB6 is built directly on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** and **[WEB5](https://www.npmjs.com/package/@oasisomniverse/web5-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+WEB 6 is built directly on **[WEB 4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** and **[WEB 5](https://www.npmjs.com/package/@oasisomniverse/web5-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB 4 through WEB 10).
 
 ## About The OASIS Omniverse
 
@@ -43,22 +43,22 @@ The OASIS (Open Advanced Sensory Immersion System) is the universal interoperabi
 
 At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
 
-This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB 4 (identity & unification) through WEB 10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
 
 👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 <a name="web6-ai-benefits"></a>
 
-## Benefits Of Building On The WEB6 AI Layer API
+## Benefits Of Building On The WEB 6 AI Layer API
 
 - **ONE API. EVERY AI - one endpoint routes across OpenAI, Anthropic, Google Gemini, xAI Grok, Qwen, DeepSeek, OpenServ and more, with zero per-provider refactoring.**
-- **Every AI request is grounded in real identity and ecosystem context (avatar, karma, data from WEB4; cross-world OAPPs and the holon graph from WEB5) - not just a generic model proxy.**
+- **Every AI request is grounded in real identity and ecosystem context (avatar, karma, data from WEB 4; cross-world OAPPs and the holon graph from WEB 5) - not just a generic model proxy.**
 - **The Holonic BRAID fractal memory hierarchy gives agents shared, persistent, hierarchical memory instead of a stateless context window.**
 - **FAHRN (the Reasoning Network) self-optimizes agent registration, scoring and dispatch across a mesh of agents.**
 - **Multi-agent orchestrator adapters for MCP, A2A, LangChain, AutoGen, CrewAI and Semantic Kernel - plug in your existing agent stack rather than rewriting it.**
 - **Image generation alongside chat/completion, through the same unified endpoint.**
 - **Integrate any WEB2 or WEB3 tech into your (web)app without having to learn or worry about new tech stacks/languages.**
-- **SSO Avatar with a Karma reputation system (inherited from WEB4 - full accountability, zero crime, dark-net proof).**
+- **SSO Avatar with a Karma reputation system (inherited from WEB 4 - full accountability, zero crime, dark-net proof).**
 - **Maximum integration & interoperability, auto load-balancing, auto fail-over, auto replication.**
 - **HOT-swappable plugin architecture. HTTP REST/gRPC/GraphQL/CLI/Native endpoints.**
 - **Write once, deploy everywhere, now and forever - the GOD Protocol/API.**
@@ -66,7 +66,7 @@ This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4
 - **Decentralised distributed P2P networking - works offline and syncs automatically (even over LAN/Bluetooth/Mesh).**
 - **Agent-centric: you own and store your own data.**
 - **AI/Machine Learning over all of the world's aggregated data.**
-- **WEB7 Symbiosis Layer ready.**
+- **WEB 7 Symbiosis Layer ready.**
 
 Check out more info below:<br><br>
 [The Power Of The OASIS API](https://drive.google.com/file/d/1nnhGpXcprr6kota1Y85HDDKsBfJHN6sn/view?usp=sharing) <br>
@@ -160,7 +160,7 @@ console.log(result);
 
 ## Calling any endpoint
 
-Every controller on the OASIS WEB6 WebAPI is reachable as a lowerCamel
+Every controller on the OASIS WEB 6 WebAPI is reachable as a lowerCamel
 property on the client (`web6.completion`, `web6.images`,
 `web6.holonicMemory`, `web6.holonicBraid`, `web6.orchestrator`,
 `web6.reasoningNetwork`). Every generated method takes a single args object:
@@ -201,8 +201,8 @@ interface OASISResponse<T = any> {
 
 ## Auth
 
-WEB6 is an internal AI layer that sits behind the same OASIS avatar identity
-as WEB4/WEB5 - it has no avatar/login endpoints of its own. Reuse a JWT
+WEB 6 is an internal AI layer that sits behind the same OASIS avatar identity
+as WEB 4/WEB 5 - it has no avatar/login endpoints of its own. Reuse a JWT
 you've already obtained elsewhere (e.g. from `web4-oasis-api`'s
 `client.auth.login()`):
 
@@ -283,7 +283,7 @@ parameter and route details.
 ## Regenerating
 
 The generated modules, type declarations and docs are produced from
-`endpoints.json` (extracted from the WEB6 WebAPI controller source):
+`endpoints.json` (extracted from the WEB 6 WebAPI controller source):
 
 ```bash
 npm run generate   # src/modules/*.js + src/modules/index.js

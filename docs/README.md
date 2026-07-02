@@ -1,4 +1,4 @@
-# WEB6 AI Layer API — JavaScript SDK Reference
+﻿# WEB 6 AI Layer API — JavaScript SDK Reference
 
 Generated from `endpoints.json` (extracted from the WebAPI controllers) by
 `scripts/generate-full-docs.js`. Regenerate the full pipeline after the API
