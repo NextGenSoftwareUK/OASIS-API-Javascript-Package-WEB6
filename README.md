@@ -18,16 +18,16 @@
   - [Testing](#testing)  - [Troubleshooting](#troubleshooting)
   - [License](#license)
 
-Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB 6 OASIS AI Layer API** - full coverage of the OASIS WEB 6 WebAPI: unified
-AI completion/chat across every provider (OpenAI, Anthropic, Google Gemini,
-xAI Grok, Qwen, DeepSeek, OpenServ, ...), image generation, the Holonic BRAID
-fractal memory hierarchy and shared reasoning-graph library, multi-agent
-orchestrator adapters (MCP/A2A/LangChain/AutoGen/CrewAI/Semantic Kernel), and
-the Reasoning Network (FAHRN) for agent registration, scoring and dispatch.
+Isomorphic (Node 18+ and browser) JavaScript/TypeScript client for the
+**WEB 6 OASIS AI Layer API v2.0** — 14 modules, 40 operations.
 
-Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
-browser.
+**v2.0 adds:** FAHRN hero `/solve` endpoint (full pipeline in one call), embeddings,
+DID/Verifiable Credentials, external memory providers (Mem0, Zep, Letta, LangMem,
+Graphiti), holonic memory semantic search & multi-hop propagation, ML.NET in-process
+task classification & sentiment, real-time telemetry history, provider health status,
+per-avatar usage metering, A2A task protocol, and budget estimation.
+
+Zero dependencies. Wraps the global `fetch`. Works the same in Node and the browser.
 
 ## About WEB 6
 
@@ -262,19 +262,82 @@ await web6.reasoningNetwork.seedOpenServAgents();
 const result = await web6.reasoningNetwork.dispatch({ taskType: 'research', payload: { query: 'OASIS HyperDrive' } });
 ```
 
+### FAHRN Solve (`web6.fahrn`) — v2.0
+
+```js
+// Full pipeline in one call: classify → avatar context → BRAID → dispatch → answer + trace
+const answer = await web6.fahrn.solve({
+  problem: 'Design a fault-tolerant data pipeline for 1M events/sec',
+  avatarId,
+  returnReasoning: true
+});
+
+// Dry-run budget estimate before committing
+const estimate = await web6.fahrn.budgetEstimate({ taskType: 'architecture', mode: 'parallel', agentCount: 3 });
+```
+
+### DID / Verifiable Credentials (`web6.auth`) — v2.0
+
+```js
+const did = await web6.auth.createDid({ avatarId });
+const resolved = await web6.auth.resolveDid({ did: 'did:key:z6Mk...' });
+const vc = await web6.auth.issueVc({ subjectDid: did.result.id, claims: { role: 'developer', karma: 1200 } });
+const { result: { valid } } = await web6.auth.verifyVc({ credential: vc.result, issuerAvatarId: avatarId });
+```
+
+### External Memory (`web6.externalMemory`) — v2.0
+
+```js
+const providers = await web6.externalMemory.getProviders();
+const memories = await web6.externalMemory.search({ query: 'user preferences', topK: 5 });
+await web6.externalMemory.add({ provider: 'mem0', content: 'User prefers concise answers', avatarId });
+```
+
+### ML.NET (`web6.ml`) — v2.0
+
+```js
+const { result: { taskType } } = await web6.ml.classifyTask({ text: 'Solve this integral: ∫x² dx' });
+const { result: { sentiment } } = await web6.ml.analyseSentiment({ text: 'This is amazing!' });
+const models = await web6.ml.listModels();
+```
+
+### Telemetry & Usage (`web6.telemetry`, `web6.usage`) — v2.0
+
+```js
+const events = await web6.telemetry.history({ limit: 20 });
+const usage = await web6.usage.getUsage();          // current month USD spend + token count
+const health = await web6.providers.status();       // live latency per AI provider
+```
+
+### A2A Protocol (`web6.a2a`) — v2.0
+
+```js
+const task = await web6.a2a.sendTask({ message: { parts: [{ text: 'Analyse this dataset' }] } });
+const status = await web6.a2a.getTask({ id: task.result.id });
+await web6.a2a.cancelTask({ id: task.result.id });
+```
+
 ## Module reference
 
-6 modules, 18 operations in total. Full per-method tables live in
+14 modules, 40 operations in total. Full per-method tables live in
 [`docs/`](./docs/README.md).
 
 | Client property | Route prefix | Operations |
 | --- | --- | --- |
-| `web6.completion` | `v1` | 2 |
+| `web6.completion` | `v1` | 3 (complete, openServModels, embed) |
+| `web6.fahrn` | `v1/fahrn` | 2 (solve, budgetEstimate) |
 | `web6.holonicBraid` | `v1/holonic-braid` | 2 |
-| `web6.holonicMemory` | `v1/holonic-memory` | 5 |
+| `web6.holonicMemory` | `v1/holonic-memory` | 7 (incl. propagateUp, searchMemory) |
 | `web6.images` | `v1/images` | 1 |
 | `web6.orchestrator` | `v1/orchestrators` | 3 |
 | `web6.reasoningNetwork` | `v1/reasoning-network` | 4 |
+| `web6.auth` | `v1/auth` | 4 (DID + Verifiable Credentials) |
+| `web6.externalMemory` | `v1/memory/external` | 4 (providers, search, add, delete) |
+| `web6.ml` | `v1/ml` | 4 (models, classifyTask, sentiment, train) |
+| `web6.telemetry` | `v1/telemetry` | 1 (history) |
+| `web6.usage` | `v1/usage` | 1 (getUsage) |
+| `web6.providers` | `v1/providers` | 1 (status) |
+| `web6.a2a` | `a2a` | 3 (sendTask, getTask, cancelTask) |
 
 See [`docs/README.md`](./docs/README.md) for the full generated reference,
 or [`docs/modules/`](./docs/modules) for per-module method tables with

@@ -21,8 +21,12 @@ class HolonicMemoryModule {
     this.getOrCreateHolon = makeOperation(http, "v1/holonic-memory", "POST", "holons", {"query":["level","name","parentHolonId"]});
     // POST v1/holonic-memory/holons/{childHolonId}/propagate
     this.propagate = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate");
+    // POST v1/holonic-memory/holons/{childHolonId}/propagate-up
+    this.propagateUp = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate-up");
     // POST v1/holonic-memory/holons/{holonId}/memory
     this.recordMemory = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/memory");
+    // GET v1/holonic-memory/holons/{holonId}/memory/search
+    this.searchMemory = makeOperation(http, "v1/holonic-memory", "GET", "holons/{holonId}/memory/search");
     // PUT v1/holonic-memory/holons/{holonId}/membrane-rule
     this.setMembraneRule = makeOperation(http, "v1/holonic-memory", "PUT", "holons/{holonId}/membrane-rule");
   }

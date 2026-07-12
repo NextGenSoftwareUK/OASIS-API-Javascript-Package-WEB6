@@ -7,6 +7,9 @@ export declare class CompletionModule {
   /** POST v1/complete */
   complete(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST v1/embed */
+  embed(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET v1/openserv/models */
   openServModels(args?: Record<string, any>): Promise<OASISResponse>;
 }

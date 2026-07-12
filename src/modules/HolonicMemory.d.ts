@@ -13,8 +13,14 @@ export declare class HolonicMemoryModule {
   /** POST v1/holonic-memory/holons/{childHolonId}/propagate */
   propagate(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST v1/holonic-memory/holons/{childHolonId}/propagate-up */
+  propagateUp(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST v1/holonic-memory/holons/{holonId}/memory */
   recordMemory(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET v1/holonic-memory/holons/{holonId}/memory/search */
+  searchMemory(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT v1/holonic-memory/holons/{holonId}/membrane-rule */
   setMembraneRule(args?: Record<string, any>): Promise<OASISResponse>;

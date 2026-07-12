@@ -6,22 +6,18 @@
 const { makeOperation } = require('../core/routeHelper');
 
 /**
- * Generated wrapper for v1 (source: WEB6 AI Layer WebAPI CompletionController.cs).
+ * Generated wrapper for v1/providers (source: WEB6 AI Layer WebAPI ProvidersController.cs).
  * Every method takes a single args object: path-template tokens (e.g. {id})
  * are consumed from it automatically; any remaining keys are sent as the
  * query string (GET/DELETE) or JSON body (POST/PUT).
  */
-class CompletionModule {
+class ProvidersModule {
   constructor(http) {
     this._http = http;
 
-    // POST v1/complete
-    this.complete = makeOperation(http, "v1", "POST", "complete");
-    // POST v1/embed
-    this.embed = makeOperation(http, "v1", "POST", "embed");
-    // GET v1/openserv/models
-    this.openServModels = makeOperation(http, "v1", "GET", "openserv/models");
+    // GET v1/providers/status
+    this.status = makeOperation(http, "v1/providers", "GET", "status");
   }
 }
 
-module.exports = { CompletionModule };
+module.exports = { ProvidersModule };
