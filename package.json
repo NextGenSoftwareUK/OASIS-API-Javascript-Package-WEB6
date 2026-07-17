@@ -1,6 +1,7 @@
-﻿{
+{
   "name": "@oasisomniverse/web6-api",
-  "version": "2.0.0",
+  "author": "NextGen World Ltd",
+  "version": "2.0.2",
   "publishConfig": { "access": "public" },
   "description": "Isomorphic (Node + browser) JavaScript/TypeScript client for the WEB6 OASIS AI Layer API v2.0 — 14 modules, 40 operations covering: unified AI completion across 20+ providers, FAHRN hero solve endpoint, Holonic BRAID reasoning-graph memory, holonic memory hierarchy with semantic search and multi-hop propagation, external memory providers (Mem0, Zep, Letta, LangMem, Graphiti), DID/Verifiable Credentials, ML.NET in-process classification, multi-protocol orchestration (MCP/A2A/ACP/ANP/gRPC/GraphQL), image generation, real-time telemetry, provider health, usage metering, and the A2A task protocol.",
   "main": "index.js",
