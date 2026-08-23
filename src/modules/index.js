@@ -7,6 +7,7 @@ const { HolonicBraidModule } = require('./HolonicBraid');
 const { HolonicMemoryModule } = require('./HolonicMemory');
 const { ImagesModule } = require('./Images');
 const { OrchestratorModule } = require('./Orchestrator');
+const { OrchestrateModule } = require('./Orchestrate');
 const { ReasoningNetworkModule } = require('./ReasoningNetwork');
 const { DidModule } = require('./Did');
 const { ExternalMemoryModule } = require('./ExternalMemory');
@@ -15,6 +16,8 @@ const { TelemetryModule } = require('./Telemetry');
 const { UsageModule } = require('./Usage');
 const { ProvidersModule } = require('./Providers');
 const { A2AModule } = require('./A2A');
+const { HealthModule } = require('./Health');
+const { ModelsModule } = require('./Models');
 
 /**
  * Attaches every generated module to the client under its lowerCamel controller
@@ -27,6 +30,7 @@ function attachGeneratedModules(client, http) {
   client.holonicMemory = client.holonicMemory || new HolonicMemoryModule(http);
   client.images = client.images || new ImagesModule(http);
   client.orchestrator = client.orchestrator || new OrchestratorModule(http);
+  client.orchestrate = client.orchestrate || new OrchestrateModule(http);
   client.reasoningNetwork = client.reasoningNetwork || new ReasoningNetworkModule(http);
   client.did = client.did || new DidModule(http);
   client.externalMemory = client.externalMemory || new ExternalMemoryModule(http);
@@ -35,6 +39,8 @@ function attachGeneratedModules(client, http) {
   client.usage = client.usage || new UsageModule(http);
   client.providers = client.providers || new ProvidersModule(http);
   client.a2A = client.a2A || new A2AModule(http);
+  client.health = client.health || new HealthModule(http);
+  client.models = client.models || new ModelsModule(http);
   return client;
 }
 

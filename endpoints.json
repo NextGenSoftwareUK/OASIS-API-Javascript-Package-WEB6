@@ -419,6 +419,77 @@
       }
     }
   },
+  "HealthController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Health": {
+        "verb": "GET",
+        "route": "health",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": { "wrapper": null, "inner": "object" },
+        "summary": "Unauthenticated liveness probe. Returns { status: 'ok' | 'degraded', version, uptime }. Use for k8s readiness probes and monitoring dashboards. GET https://api.web6.oasisomniverse.one/v1/health"
+      }
+    }
+  },
+  "ModelCatalogueController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "ListModels": {
+        "verb": "GET",
+        "route": "models",
+        "routeParams": [],
+        "queryParams": [
+          { "name": "plan", "type": "string", "optional": true }
+        ],
+        "requestType": null,
+        "responseType": { "wrapper": null, "inner": "List<ModelCatalogueEntry>" },
+        "summary": "Returns the full WEB6 model catalogue with pricing, plan tier, and provider mapping. Pass ?plan=Free|Bronze|Silver|Gold to filter. GET https://api.web6.oasisomniverse.one/v1/models"
+      },
+      "GetModel": {
+        "verb": "GET",
+        "route": "models/{modelId}",
+        "routeParams": [{ "name": "modelId", "type": "string" }],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": { "wrapper": null, "inner": "ModelCatalogueEntry" },
+        "summary": "Returns full details for a single model by its catalogue ID. GET https://api.web6.oasisomniverse.one/v1/models/{modelId}"
+      }
+    }
+  },
+  "OrchestratorsController.cs": {
+    "route_prefix": "v1/orchestrate",
+    "ops": {
+      "CrewAI": {
+        "verb": "POST",
+        "route": "crewai",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "CrewAIRequest",
+        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
+        "summary": "Dispatches a CrewAI task list through WEB6 AI routing — no CrewAI SDK required. Process: sequential (default) or hierarchical. POST https://api.web6.oasisomniverse.one/v1/orchestrate/crewai"
+      },
+      "AutoGen": {
+        "verb": "POST",
+        "route": "autogen",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "AutoGenRequest",
+        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
+        "summary": "Initiates a Microsoft AutoGen multi-agent conversation through WEB6 — no AutoGen SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/autogen"
+      },
+      "LangGraph": {
+        "verb": "POST",
+        "route": "langgraph",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "LangGraphRequest",
+        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
+        "summary": "Executes a LangGraph node via WEB6 and returns the updated graph state — no LangGraph SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/langgraph"
+      }
+    }
+  },
   "A2AController.cs": {
     "route_prefix": "a2a",
     "ops": {
