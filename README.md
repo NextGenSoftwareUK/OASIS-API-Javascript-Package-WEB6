@@ -224,6 +224,32 @@ const reply = await web6.completion.complete({
 const models = await web6.completion.openServModels();
 ```
 
+### Tool / function calling (`web6.completion`) — v2.1
+
+```js
+const tools = [{
+  type: 'function',
+  function: {
+    name: 'get_karma',
+    description: 'Returns karma score for an avatar.',
+    parameters: { type: 'object', properties: { avatar_id: { type: 'string' } }, required: ['avatar_id'] }
+  }
+}];
+
+const resp = await web6.completion.complete({ avatarId, messages: [{ role: 'user', content: 'What is my karma?' }], tools });
+
+if (resp.result.finishReason === 'tool_calls') {
+  const tc = resp.result.toolCalls[0];
+  const messages = [
+    { role: 'user', content: 'What is my karma?' },
+    { role: 'assistant', content: null, tool_calls: resp.result.toolCalls },
+    { role: 'tool', tool_call_id: tc.id, content: '750' },
+  ];
+  const final = await web6.completion.completeToolResult({ avatarId, messages, tools });
+  console.log(final.result.content);
+}
+```
+
 ### Images (`web6.images`)
 
 ```js
