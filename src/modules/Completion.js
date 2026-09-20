@@ -17,6 +17,8 @@ class CompletionModule {
 
     // POST v1/complete
     this.complete = makeOperation(http, "v1", "POST", "complete");
+    // POST v1/complete/tool-result
+    this.completeToolResult = makeOperation(http, "v1", "POST", "complete/tool-result");
     // POST v1/embed
     this.embed = makeOperation(http, "v1", "POST", "embed");
     // GET v1/openserv/models
