@@ -17,6 +17,8 @@ class TelemetryModule {
 
     // GET v1/telemetry/history
     this.history = makeOperation(http, "v1/telemetry", "GET", "history");
+    // GET v1/telemetry/stream  (SSE — admin sees all events; others see only own)
+    this.stream = makeOperation(http, "v1/telemetry", "GET", "stream");
   }
 }
 

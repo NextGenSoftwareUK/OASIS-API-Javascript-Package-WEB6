@@ -23,6 +23,10 @@ class ReasoningNetworkModule {
     this.registerAgent = makeOperation(http, "v1/reasoning-network", "POST", "agents");
     // POST v1/reasoning-network/agents/seed-openserv
     this.seedOpenServAgents = makeOperation(http, "v1/reasoning-network", "POST", "agents/seed-openserv");
+    // GET v1/reasoning-network/agents/{agentId}/skills/{category}
+    this.getAgentSkills = makeOperation(http, "v1/reasoning-network", "GET", "agents/{agentId}/skills/{category}");
+    // POST v1/reasoning-network/agents/{agentId}/skills/{category}/evolve
+    this.evolveAgentSkill = makeOperation(http, "v1/reasoning-network", "POST", "agents/{agentId}/skills/{category}/evolve");
   }
 }
 

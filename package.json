@@ -1,7 +1,7 @@
 {
   "name": "@oasisomniverse/web6-api",
   "author": "NextGen World Ltd",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "publishConfig": { "access": "public" },
   "description": "Isomorphic (Node + browser) JavaScript/TypeScript client for the WEB6 OASIS AI Layer API v3.0 — 17 modules, 47 operations covering: unified AI completion across 99 providers (OpenAI, Anthropic, Gemini, Grok, Mistral, SambaNova, OpenRouter, Together AI, Perplexity, DeepSeek, Cerebras, Cohere, HuggingFace, Ollama, OpenServ + more), tool/function calling with completeToolResult, FAHRN hero solve endpoint, Holonic BRAID reasoning-graph memory, holonic memory hierarchy with semantic search and multi-hop propagation, external memory providers (Mem0, Zep, Letta, LangMem, Graphiti), DID/Verifiable Credentials, ML.NET in-process classification, multi-protocol orchestration (MCP/A2A/ACP/ANP/gRPC/GraphQL), CrewAI/AutoGen/LangGraph dispatch, model catalogue with plan/tier filtering, image generation, real-time telemetry, provider health, usage metering, and the A2A task protocol.",
   "main": "index.js",

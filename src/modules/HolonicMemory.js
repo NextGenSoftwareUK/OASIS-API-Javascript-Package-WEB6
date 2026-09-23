@@ -23,6 +23,8 @@ class HolonicMemoryModule {
     this.propagate = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate");
     // POST v1/holonic-memory/holons/{childHolonId}/propagate-up
     this.propagateUp = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate-up");
+    // POST v1/holonic-memory/holons/{holonId}/documents  (bulk document ingestion with auto-chunking)
+    this.ingestDocuments = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/documents");
     // POST v1/holonic-memory/holons/{holonId}/memory
     this.recordMemory = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/memory");
     // GET v1/holonic-memory/holons/{holonId}/memory/search
