@@ -19,6 +19,8 @@ class A2AModule {
     this.cancelTask = makeOperation(http, "a2a", "POST", "tasks/{id}/cancel");
     // GET a2a/tasks/{id}
     this.getTask = makeOperation(http, "a2a", "GET", "tasks/{id}");
+    // GET a2a/tasks/{id}/events  (SSE stream — returns text/event-stream)
+    this.getTaskEvents = makeOperation(http, "a2a", "GET", "tasks/{id}/events");
     // POST a2a/tasks/send
     this.sendTask = makeOperation(http, "a2a", "POST", "tasks/send");
   }
