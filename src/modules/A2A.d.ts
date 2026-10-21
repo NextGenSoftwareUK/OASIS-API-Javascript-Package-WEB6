@@ -5,11 +5,11 @@ export declare class A2AModule {
   constructor(http: unknown);
 
   /** POST a2a/tasks/{id}/cancel */
-  cancelTask(args?: Record<string, any>): Promise<OASISResponse>;
+  cancelTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET a2a/tasks/{id} */
-  getTask(args?: Record<string, any>): Promise<OASISResponse>;
+  getTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST a2a/tasks/send */
-  sendTask(args?: Record<string, any>): Promise<OASISResponse>;
+  sendTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

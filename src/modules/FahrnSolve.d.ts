@@ -5,8 +5,8 @@ export declare class FahrnSolveModule {
   constructor(http: unknown);
 
   /** GET v1/fahrn/budget-estimate */
-  budgetEstimate(args?: Record<string, any>): Promise<OASISResponse>;
+  budgetEstimate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/fahrn/solve */
-  solve(args?: Record<string, any>): Promise<OASISResponse>;
+  solve(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

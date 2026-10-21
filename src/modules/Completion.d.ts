@@ -5,14 +5,14 @@ export declare class CompletionModule {
   constructor(http: unknown);
 
   /** POST v1/complete */
-  complete(args?: Record<string, any>): Promise<OASISResponse>;
+  complete(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/complete/tool-result — feed a tool call result back to continue the agent loop */
-  completeToolResult(args?: Record<string, any>): Promise<OASISResponse>;
+  completeToolResult(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/embed */
-  embed(args?: Record<string, any>): Promise<OASISResponse>;
+  embed(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/openserv/models */
-  openServModels(args?: Record<string, any>): Promise<OASISResponse>;
+  openServModels(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

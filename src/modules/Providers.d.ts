@@ -5,5 +5,5 @@ export declare class ProvidersModule {
   constructor(http: unknown);
 
   /** GET v1/providers/status */
-  status(args?: Record<string, any>): Promise<OASISResponse>;
+  status(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

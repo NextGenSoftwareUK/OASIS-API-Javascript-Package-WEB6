@@ -5,14 +5,14 @@ export declare class DidModule {
   constructor(http: unknown);
 
   /** POST v1/auth/did */
-  createDid(args?: Record<string, any>): Promise<OASISResponse>;
+  createDid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/auth/vc */
-  issueVc(args?: Record<string, any>): Promise<OASISResponse>;
+  issueVc(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/auth/did/{did} */
-  resolveDid(args?: Record<string, any>): Promise<OASISResponse>;
+  resolveDid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/auth/vc/verify */
-  verifyVc(args?: Record<string, any>): Promise<OASISResponse>;
+  verifyVc(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

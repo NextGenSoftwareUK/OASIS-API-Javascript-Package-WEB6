@@ -5,14 +5,14 @@ export declare class ReasoningNetworkModule {
   constructor(http: unknown);
 
   /** POST v1/reasoning-network/dispatch */
-  dispatch(args?: Record<string, any>): Promise<OASISResponse>;
+  dispatch(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/reasoning-network/agents */
-  getAgents(args?: Record<string, any>): Promise<OASISResponse>;
+  getAgents(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/reasoning-network/agents */
-  registerAgent(args?: Record<string, any>): Promise<OASISResponse>;
+  registerAgent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/reasoning-network/agents/seed-openserv */
-  seedOpenServAgents(args?: Record<string, any>): Promise<OASISResponse>;
+  seedOpenServAgents(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

@@ -5,11 +5,11 @@ export declare class OrchestratorModule {
   constructor(http: unknown);
 
   /** GET v1/orchestrators/ */
-  getAdapters(args?: Record<string, any>): Promise<OASISResponse>;
+  getAdapters(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/orchestrators/invoke */
-  invoke(args?: Record<string, any>): Promise<OASISResponse>;
+  invoke(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/orchestrators/ */
-  registerAdapter(args?: Record<string, any>): Promise<OASISResponse>;
+  registerAdapter(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

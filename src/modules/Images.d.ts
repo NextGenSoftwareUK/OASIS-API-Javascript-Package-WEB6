@@ -5,5 +5,5 @@ export declare class ImagesModule {
   constructor(http: unknown);
 
   /** POST v1/images/generate */
-  generate(args?: Record<string, any>): Promise<OASISResponse>;
+  generate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

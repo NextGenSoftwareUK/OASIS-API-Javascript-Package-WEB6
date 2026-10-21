@@ -5,14 +5,14 @@ export declare class MLNetModule {
   constructor(http: unknown);
 
   /** POST v1/ml/sentiment */
-  analyseSentiment(args?: Record<string, any>): Promise<OASISResponse>;
+  analyseSentiment(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/ml/classify-task */
-  classifyTask(args?: Record<string, any>): Promise<OASISResponse>;
+  classifyTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/ml/models */
-  listModels(args?: Record<string, any>): Promise<OASISResponse>;
+  listModels(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/ml/train */
-  trainTaskClassifier(args?: Record<string, any>): Promise<OASISResponse>;
+  trainTaskClassifier(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

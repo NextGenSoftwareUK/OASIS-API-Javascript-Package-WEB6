@@ -5,14 +5,14 @@ export declare class ExternalMemoryModule {
   constructor(http: unknown);
 
   /** POST v1/memory/external/add */
-  add(args?: Record<string, any>): Promise<OASISResponse>;
+  add(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE v1/memory/external/{provider}/{id} */
-  delete(args?: Record<string, any>): Promise<OASISResponse>;
+  delete(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/memory/external/providers */
-  getProviders(args?: Record<string, any>): Promise<OASISResponse>;
+  getProviders(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/memory/external/search */
-  search(args?: Record<string, any>): Promise<OASISResponse>;
+  search(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

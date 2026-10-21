@@ -5,5 +5,5 @@ export declare class TelemetryModule {
   constructor(http: unknown);
 
   /** GET v1/telemetry/history */
-  history(args?: Record<string, any>): Promise<OASISResponse>;
+  history(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

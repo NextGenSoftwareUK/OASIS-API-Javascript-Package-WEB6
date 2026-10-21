@@ -5,8 +5,8 @@ export declare class HolonicBraidModule {
   constructor(http: unknown);
 
   /** GET v1/holonic-braid/graph/{taskType} */
-  getGraph(args?: Record<string, any>): Promise<OASISResponse>;
+  getGraph(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/holonic-braid/graph/{taskType} */
-  saveGraph(args?: Record<string, any>): Promise<OASISResponse>;
+  saveGraph(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

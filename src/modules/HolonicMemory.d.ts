@@ -5,23 +5,23 @@ export declare class HolonicMemoryModule {
   constructor(http: unknown);
 
   /** GET v1/holonic-memory/earth */
-  getEarthHolon(args?: Record<string, any>): Promise<OASISResponse>;
+  getEarthHolon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/holonic-memory/holons (query: level, name, parentHolonId) */
-  getOrCreateHolon(args?: Record<string, any>): Promise<OASISResponse>;
+  getOrCreateHolon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/holonic-memory/holons/{childHolonId}/propagate */
-  propagate(args?: Record<string, any>): Promise<OASISResponse>;
+  propagate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/holonic-memory/holons/{childHolonId}/propagate-up */
-  propagateUp(args?: Record<string, any>): Promise<OASISResponse>;
+  propagateUp(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/holonic-memory/holons/{holonId}/memory */
-  recordMemory(args?: Record<string, any>): Promise<OASISResponse>;
+  recordMemory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/holonic-memory/holons/{holonId}/memory/search */
-  searchMemory(args?: Record<string, any>): Promise<OASISResponse>;
+  searchMemory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT v1/holonic-memory/holons/{holonId}/membrane-rule */
-  setMembraneRule(args?: Record<string, any>): Promise<OASISResponse>;
+  setMembraneRule(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

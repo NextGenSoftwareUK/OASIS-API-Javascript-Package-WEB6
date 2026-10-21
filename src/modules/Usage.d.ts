@@ -5,5 +5,5 @@ export declare class UsageModule {
   constructor(http: unknown);
 
   /** GET v1/usage/ */
-  getUsage(args?: Record<string, any>): Promise<OASISResponse>;
+  getUsage(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }
