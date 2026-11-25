@@ -4,6 +4,8 @@ import type { OASISResponse } from '../core/types';
 export declare class ProvidersModule {
   constructor(http: unknown);
 
-  /** GET v1/providers/status */
+  /** GET v1/providers */
+  list(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+  /** @deprecated v1/providers/status was removed; same as list(). */
   status(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

@@ -6,7 +6,7 @@
 const { makeOperation } = require('../core/routeHelper');
 
 /**
- * Generated wrapper for v1/orchestrators (source: WEB6 AI Layer WebAPI OrchestratorController.cs).
+ * Generated wrapper for v1/orchestrate (source: WEB6 AI Layer WebAPI OrchestratorController.cs).
  * Every method takes a single args object: path-template tokens (e.g. {id})
  * are consumed from it automatically; any remaining keys are sent as the
  * query string (GET/DELETE) or JSON body (POST/PUT).
@@ -15,12 +15,12 @@ class OrchestratorModule {
   constructor(http) {
     this._http = http;
 
-    // GET v1/orchestrators/
-    this.getAdapters = makeOperation(http, "v1/orchestrators", "GET", "");
-    // POST v1/orchestrators/invoke
-    this.invoke = makeOperation(http, "v1/orchestrators", "POST", "invoke");
-    // POST v1/orchestrators/
-    this.registerAdapter = makeOperation(http, "v1/orchestrators", "POST", "");
+    // POST v1/orchestrate/crewai
+    this.crewAI = makeOperation(http, "v1/orchestrate", "POST", "crewai");
+    // POST v1/orchestrate/autogen
+    this.autoGen = makeOperation(http, "v1/orchestrate", "POST", "autogen");
+    // POST v1/orchestrate/langgraph
+    this.langGraph = makeOperation(http, "v1/orchestrate", "POST", "langgraph");
   }
 }
 
