@@ -6,4 +6,7 @@ export declare class TelemetryModule {
 
   /** GET v1/telemetry/history */
   history(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET v1/telemetry/stream */
+  stream(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

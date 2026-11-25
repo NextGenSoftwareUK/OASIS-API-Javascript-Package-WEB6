@@ -15,10 +15,10 @@ class OrchestratorModule {
   constructor(http) {
     this._http = http;
 
-    // POST v1/orchestrate/crewai
-    this.crewAI = makeOperation(http, "v1/orchestrate", "POST", "crewai");
     // POST v1/orchestrate/autogen
     this.autoGen = makeOperation(http, "v1/orchestrate", "POST", "autogen");
+    // POST v1/orchestrate/crewai
+    this.crewAI = makeOperation(http, "v1/orchestrate", "POST", "crewai");
     // POST v1/orchestrate/langgraph
     this.langGraph = makeOperation(http, "v1/orchestrate", "POST", "langgraph");
   }

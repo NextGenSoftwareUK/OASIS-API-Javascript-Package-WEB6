@@ -7,8 +7,14 @@ export declare class ReasoningNetworkModule {
   /** POST v1/reasoning-network/dispatch */
   dispatch(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** POST v1/reasoning-network/agents/{agentId}/skills/{category}/evolve */
+  evolveAgentSkill(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** GET v1/reasoning-network/agents */
   getAgents(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET v1/reasoning-network/agents/{agentId}/skills/{category} */
+  getAgentSkills(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/reasoning-network/agents */
   registerAgent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;

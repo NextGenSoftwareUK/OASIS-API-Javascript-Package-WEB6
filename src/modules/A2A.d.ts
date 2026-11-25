@@ -7,9 +7,48 @@ export declare class A2AModule {
   /** POST a2a/tasks/{id}/cancel */
   cancelTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** POST a2a/network/tasks */
+  delegateTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET a2a/ */
+  find(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET a2a/{agentId} */
+  getCard(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET a2a/network/tasks/{id} */
+  getNetworkTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** GET a2a/tasks/{id} */
   getTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** GET a2a/tasks/{id}/events */
+  getTaskEvents(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST a2a/network/rpc */
+  jsonRpc(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET a2a/network/tasks */
+  listTasks(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST a2a/network/messages/{id}/processed */
+  markProcessed(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST a2a/network/payments */
+  payAgent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET a2a/network/messages/pending */
+  pendingMessages(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** PUT a2a/network/card */
+  publishCard(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST a2a/network/messages */
+  sendMessage(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** POST a2a/tasks/send */
   sendTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST a2a/network/tasks/{id}/status */
+  updateTask(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

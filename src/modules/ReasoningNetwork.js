@@ -17,16 +17,16 @@ class ReasoningNetworkModule {
 
     // POST v1/reasoning-network/dispatch
     this.dispatch = makeOperation(http, "v1/reasoning-network", "POST", "dispatch");
+    // POST v1/reasoning-network/agents/{agentId}/skills/{category}/evolve
+    this.evolveAgentSkill = makeOperation(http, "v1/reasoning-network", "POST", "agents/{agentId}/skills/{category}/evolve");
+    // GET v1/reasoning-network/agents/{agentId}/skills/{category}
+    this.getAgentSkills = makeOperation(http, "v1/reasoning-network", "GET", "agents/{agentId}/skills/{category}");
     // GET v1/reasoning-network/agents
     this.getAgents = makeOperation(http, "v1/reasoning-network", "GET", "agents");
     // POST v1/reasoning-network/agents
     this.registerAgent = makeOperation(http, "v1/reasoning-network", "POST", "agents");
     // POST v1/reasoning-network/agents/seed-openserv
     this.seedOpenServAgents = makeOperation(http, "v1/reasoning-network", "POST", "agents/seed-openserv");
-    // GET v1/reasoning-network/agents/{agentId}/skills/{category}
-    this.getAgentSkills = makeOperation(http, "v1/reasoning-network", "GET", "agents/{agentId}/skills/{category}");
-    // POST v1/reasoning-network/agents/{agentId}/skills/{category}/evolve
-    this.evolveAgentSkill = makeOperation(http, "v1/reasoning-network", "POST", "agents/{agentId}/skills/{category}/evolve");
   }
 }
 

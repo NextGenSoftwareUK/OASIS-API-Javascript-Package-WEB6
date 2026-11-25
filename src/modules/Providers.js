@@ -15,10 +15,8 @@ class ProvidersModule {
   constructor(http) {
     this._http = http;
 
-    // GET v1/providers
+    // GET v1/providers/
     this.list = makeOperation(http, "v1/providers", "GET", "");
-    /** @deprecated v1/providers/status was removed; this now calls GET v1/providers. */
-    this.status = this.list;
   }
 }
 

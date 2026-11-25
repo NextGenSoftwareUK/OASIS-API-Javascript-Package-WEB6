@@ -17,12 +17,36 @@ class A2AModule {
 
     // POST a2a/tasks/{id}/cancel
     this.cancelTask = makeOperation(http, "a2a", "POST", "tasks/{id}/cancel");
+    // POST a2a/network/tasks
+    this.delegateTask = makeOperation(http, "a2a", "POST", "network/tasks");
+    // GET a2a/
+    this.find = makeOperation(http, "a2a", "GET", "");
+    // GET a2a/{agentId}
+    this.getCard = makeOperation(http, "a2a", "GET", "{agentId}");
+    // GET a2a/network/tasks/{id}
+    this.getNetworkTask = makeOperation(http, "a2a", "GET", "network/tasks/{id}");
     // GET a2a/tasks/{id}
     this.getTask = makeOperation(http, "a2a", "GET", "tasks/{id}");
-    // GET a2a/tasks/{id}/events  (SSE stream — returns text/event-stream)
+    // GET a2a/tasks/{id}/events
     this.getTaskEvents = makeOperation(http, "a2a", "GET", "tasks/{id}/events");
+    // POST a2a/network/rpc
+    this.jsonRpc = makeOperation(http, "a2a", "POST", "network/rpc");
+    // GET a2a/network/tasks
+    this.listTasks = makeOperation(http, "a2a", "GET", "network/tasks");
+    // POST a2a/network/messages/{id}/processed
+    this.markProcessed = makeOperation(http, "a2a", "POST", "network/messages/{id}/processed");
+    // POST a2a/network/payments
+    this.payAgent = makeOperation(http, "a2a", "POST", "network/payments");
+    // GET a2a/network/messages/pending
+    this.pendingMessages = makeOperation(http, "a2a", "GET", "network/messages/pending");
+    // PUT a2a/network/card
+    this.publishCard = makeOperation(http, "a2a", "PUT", "network/card");
+    // POST a2a/network/messages
+    this.sendMessage = makeOperation(http, "a2a", "POST", "network/messages");
     // POST a2a/tasks/send
     this.sendTask = makeOperation(http, "a2a", "POST", "tasks/send");
+    // POST a2a/network/tasks/{id}/status
+    this.updateTask = makeOperation(http, "a2a", "POST", "network/tasks/{id}/status");
   }
 }
 

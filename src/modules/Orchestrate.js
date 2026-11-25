@@ -6,18 +6,19 @@
 const { makeOperation } = require('../core/routeHelper');
 
 /**
- * Generated wrapper for v1/orchestrate (source: WEB6 AI Layer WebAPI OrchestratorController.cs).
- * Dispatches CrewAI, AutoGen and LangGraph payloads through WEB6 without requiring
- * the framework SDKs to be installed — WEB6 translates to completion calls internally.
+ * Generated wrapper for v1/orchestrate (source: WEB6 AI Layer WebAPI OrchestrateController.cs).
+ * Every method takes a single args object: path-template tokens (e.g. {id})
+ * are consumed from it automatically; any remaining keys are sent as the
+ * query string (GET/DELETE) or JSON body (POST/PUT).
  */
 class OrchestrateModule {
   constructor(http) {
     this._http = http;
 
-    // POST v1/orchestrate/crewai
-    this.crewai = makeOperation(http, "v1/orchestrate", "POST", "crewai");
     // POST v1/orchestrate/autogen
     this.autogen = makeOperation(http, "v1/orchestrate", "POST", "autogen");
+    // POST v1/orchestrate/crewai
+    this.crewai = makeOperation(http, "v1/orchestrate", "POST", "crewai");
     // POST v1/orchestrate/langgraph
     this.langgraph = makeOperation(http, "v1/orchestrate", "POST", "langgraph");
   }

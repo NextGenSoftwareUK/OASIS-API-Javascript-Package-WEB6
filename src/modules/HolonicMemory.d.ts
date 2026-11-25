@@ -10,6 +10,9 @@ export declare class HolonicMemoryModule {
   /** POST v1/holonic-memory/holons (query: level, name, parentHolonId) */
   getOrCreateHolon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** POST v1/holonic-memory/holons/{holonId}/documents */
+  ingestDocuments(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** POST v1/holonic-memory/holons/{childHolonId}/propagate */
   propagate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
@@ -21,6 +24,9 @@ export declare class HolonicMemoryModule {
 
   /** GET v1/holonic-memory/holons/{holonId}/memory/search */
   searchMemory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** GET v1/holonic-memory/holons/{holonId}/memory/semantic-search */
+  semanticSearchMemory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT v1/holonic-memory/holons/{holonId}/membrane-rule */
   setMembraneRule(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;

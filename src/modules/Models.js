@@ -6,17 +6,19 @@
 const { makeOperation } = require('../core/routeHelper');
 
 /**
- * Generated wrapper for v1/models (source: WEB6 AI Layer WebAPI ModelCatalogueController.cs).
- * Browse the full WEB6 model catalogue — filter by plan, compare pricing, fetch details.
+ * Generated wrapper for v1 (source: WEB6 AI Layer WebAPI ModelsController.cs).
+ * Every method takes a single args object: path-template tokens (e.g. {id})
+ * are consumed from it automatically; any remaining keys are sent as the
+ * query string (GET/DELETE) or JSON body (POST/PUT).
  */
 class ModelsModule {
   constructor(http) {
     this._http = http;
 
-    // GET v1/models  (pass { plan: "Free|Bronze|Silver|Gold" } to filter)
-    this.list = makeOperation(http, "v1", "GET", "models");
     // GET v1/models/{modelId}
-    this.get = makeOperation(http, "v1/models", "GET", "{modelId}");
+    this.get = makeOperation(http, "v1", "GET", "models/{modelId}");
+    // GET v1/models
+    this.list = makeOperation(http, "v1", "GET", "models");
   }
 }
 

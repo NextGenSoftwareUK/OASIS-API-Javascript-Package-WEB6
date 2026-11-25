@@ -1,17 +1,32 @@
-# Orchestrator
+# Orchestrator — `web6.orchestrator`
 
+Source controller: [`OrchestratorController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB6/NextGenSoftware.OASIS.Web6.WebAPI/Controllers/OrchestratorController.cs)
 Route prefix: `v1/orchestrate`
+3 operation(s).
 
-Run a multi-agent workflow through one of the supported orchestration frameworks. Each method takes a single args object that is sent as the JSON body.
+All methods are generated 1:1 from the controller's real `[Http*]` routes (see
+[Conventions](../README.md#calling-any-endpoint)). They take a single args
+object: any key matching a `{token}` in the route is substituted into the
+URL; everything else becomes the query string (GET/DELETE) or JSON body
+(POST/PUT).
 
-| Method | Route |
-| --- | --- |
-| `crewAI` | **POST** `v1/orchestrate/crewai` |
-| `autoGen` | **POST** `v1/orchestrate/autogen` |
-| `langGraph` | **POST** `v1/orchestrate/langgraph` |
+## Methods
+
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `autoGen` | POST | `v1/orchestrate/autogen` | – | – | remaining args |
+| `crewAI` | POST | `v1/orchestrate/crewai` | – | – | remaining args |
+| `langGraph` | POST | `v1/orchestrate/langgraph` | – | – | remaining args |
+
+## Example
 
 ```js
-const { isError, message, result } = await web6.orchestrator.crewAI({ /* request body */ });
-```
+const web6 = new Web6Client({ baseUrl: '...' });
+web6.setToken(jwtToken); // reuse a WEB4 JWT
 
-The earlier `getAdapters`, `invoke` and `registerAdapter` methods called `v1/orchestrators`, which the server no longer has, so they were removed.
+const { isError, message, result } = await web6.orchestrator.autoGen({
+    /* ...other fields per the request body */
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```

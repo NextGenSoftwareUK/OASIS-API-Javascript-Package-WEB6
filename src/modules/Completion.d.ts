@@ -7,7 +7,10 @@ export declare class CompletionModule {
   /** POST v1/complete */
   complete(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** POST v1/complete/tool-result — feed a tool call result back to continue the agent loop */
+  /** POST v1/complete/stream */
+  completeStream(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST v1/complete/tool-result */
   completeToolResult(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/embed */

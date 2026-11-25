@@ -6,8 +6,10 @@
 const { makeOperation } = require('../core/routeHelper');
 
 /**
- * Generated wrapper for v1/health (source: WEB6 AI Layer WebAPI HealthController.cs).
- * Unauthenticated liveness / readiness probe. Returns { status: "ok" | "degraded" }.
+ * Generated wrapper for v1 (source: WEB6 AI Layer WebAPI HealthController.cs).
+ * Every method takes a single args object: path-template tokens (e.g. {id})
+ * are consumed from it automatically; any remaining keys are sent as the
+ * query string (GET/DELETE) or JSON body (POST/PUT).
  */
 class HealthModule {
   constructor(http) {

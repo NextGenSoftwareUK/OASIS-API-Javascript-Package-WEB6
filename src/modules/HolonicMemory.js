@@ -19,16 +19,18 @@ class HolonicMemoryModule {
     this.getEarthHolon = makeOperation(http, "v1/holonic-memory", "GET", "earth");
     // POST v1/holonic-memory/holons (query: level, name, parentHolonId)
     this.getOrCreateHolon = makeOperation(http, "v1/holonic-memory", "POST", "holons", {"query":["level","name","parentHolonId"]});
+    // POST v1/holonic-memory/holons/{holonId}/documents
+    this.ingestDocuments = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/documents");
     // POST v1/holonic-memory/holons/{childHolonId}/propagate
     this.propagate = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate");
     // POST v1/holonic-memory/holons/{childHolonId}/propagate-up
     this.propagateUp = makeOperation(http, "v1/holonic-memory", "POST", "holons/{childHolonId}/propagate-up");
-    // POST v1/holonic-memory/holons/{holonId}/documents  (bulk document ingestion with auto-chunking)
-    this.ingestDocuments = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/documents");
     // POST v1/holonic-memory/holons/{holonId}/memory
     this.recordMemory = makeOperation(http, "v1/holonic-memory", "POST", "holons/{holonId}/memory");
     // GET v1/holonic-memory/holons/{holonId}/memory/search
     this.searchMemory = makeOperation(http, "v1/holonic-memory", "GET", "holons/{holonId}/memory/search");
+    // GET v1/holonic-memory/holons/{holonId}/memory/semantic-search
+    this.semanticSearchMemory = makeOperation(http, "v1/holonic-memory", "GET", "holons/{holonId}/memory/semantic-search");
     // PUT v1/holonic-memory/holons/{holonId}/membrane-rule
     this.setMembraneRule = makeOperation(http, "v1/holonic-memory", "PUT", "holons/{holonId}/membrane-rule");
   }

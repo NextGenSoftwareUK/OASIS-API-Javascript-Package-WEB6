@@ -1,4 +1,380 @@
 {
+  "A2AController.cs": {
+    "route_prefix": "a2a",
+    "ops": {
+      "CancelTask": {
+        "verb": "POST",
+        "route": "tasks/{id}/cancel",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "void"
+        },
+        "summary": "Cancel a running A2A task. POST https://api.web6.oasisomniverse.one/a2a/tasks/{id}/cancel"
+      },
+      "GetTask": {
+        "verb": "GET",
+        "route": "tasks/{id}",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "A2ATask"
+        },
+        "summary": "Get A2A task status by id. GET https://api.web6.oasisomniverse.one/a2a/tasks/{id}"
+      },
+      "GetTaskEvents": {
+        "verb": "GET",
+        "route": "tasks/{id}/events",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a/tasks/{id}/events"
+      },
+      "SendTask": {
+        "verb": "POST",
+        "route": "tasks/send",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "A2ATaskSendRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "A2ATask"
+        },
+        "summary": "Submit a task to the OASIS FAHRN agent via the Google A2A protocol. Runs FAHRN solve async and returns an A2ATask with status. POST https://api.web6.oasisomniverse.one/a2a/tasks/send"
+      },
+      "Find": {
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a"
+      },
+      "PublishCard": {
+        "verb": "PUT",
+        "route": "network/card",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "PUT /a2a/network/card"
+      },
+      "SendMessage": {
+        "verb": "POST",
+        "route": "network/messages",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/messages"
+      },
+      "PendingMessages": {
+        "verb": "GET",
+        "route": "network/messages/pending",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a/network/messages/pending"
+      },
+      "MarkProcessed": {
+        "verb": "POST",
+        "route": "network/messages/{id}/processed",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/messages/{id}/processed"
+      },
+      "PayAgent": {
+        "verb": "POST",
+        "route": "network/payments",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/payments"
+      },
+      "JsonRpc": {
+        "verb": "POST",
+        "route": "network/rpc",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/rpc"
+      },
+      "DelegateTask": {
+        "verb": "POST",
+        "route": "network/tasks",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/tasks"
+      },
+      "ListTasks": {
+        "verb": "GET",
+        "route": "network/tasks",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a/network/tasks"
+      },
+      "GetNetworkTask": {
+        "verb": "GET",
+        "route": "network/tasks/{id}",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a/network/tasks/{id}"
+      },
+      "UpdateTask": {
+        "verb": "POST",
+        "route": "network/tasks/{id}/status",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /a2a/network/tasks/{id}/status"
+      },
+      "GetCard": {
+        "verb": "GET",
+        "route": "{agentId}",
+        "routeParams": [
+          {
+            "name": "agentId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /a2a/{agentId}"
+      }
+    }
+  },
+  "AdminController.cs": {
+    "route_prefix": "v1/admin/config",
+    "ops": {
+      "GetConfig": {
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/admin/config"
+      },
+      "SetConfig": {
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/admin/config"
+      },
+      "DeleteConfig": {
+        "verb": "DELETE",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "DELETE /v1/admin/config"
+      },
+      "ConfigFahrn": {
+        "verb": "POST",
+        "route": "fahrn",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/admin/config/fahrn"
+      },
+      "ConfigBraid": {
+        "verb": "POST",
+        "route": "braid",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/admin/config/braid"
+      },
+      "GetObservedCosts": {
+        "verb": "GET",
+        "route": "observed-costs",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/admin/config/observed-costs"
+      },
+      "DeleteObservedCosts": {
+        "verb": "DELETE",
+        "route": "observed-costs",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "DELETE /v1/admin/config/observed-costs"
+      },
+      "GetAudit": {
+        "verb": "GET",
+        "route": "audit",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/admin/config/audit"
+      },
+      "GetCatalogue": {
+        "verb": "GET",
+        "route": "catalogue",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/admin/config/catalogue"
+      },
+      "PublishCatalogue": {
+        "verb": "POST",
+        "route": "catalogue/publish",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/admin/config/catalogue/publish"
+      },
+      "ValidateCatalogue": {
+        "verb": "POST",
+        "route": "catalogue/validate",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/admin/config/catalogue/validate"
+      }
+    }
+  },
+  "AsyncApiController.cs": {
+    "route_prefix": "",
+    "ops": {
+      "GetAsyncApiJson": {
+        "verb": "GET",
+        "route": "asyncapi.json",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /asyncapi.json"
+      },
+      "GetAsyncApiYaml": {
+        "verb": "GET",
+        "route": "asyncapi.yaml",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /asyncapi.yaml"
+      }
+    }
+  },
+  "BatchController.cs": {
+    "route_prefix": "v1/batch",
+    "ops": {
+      "SubmitBatch": {
+        "verb": "POST",
+        "route": "submit",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/batch/submit"
+      },
+      "GetBatchStatus": {
+        "verb": "GET",
+        "route": "{batchId}/status",
+        "routeParams": [
+          {
+            "name": "batchId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/batch/{batchId}/status"
+      }
+    }
+  },
+  "ClassificationController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Classify": {
+        "verb": "POST",
+        "route": "classify",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/classify"
+      }
+    }
+  },
+  "CodeController.cs": {
+    "route_prefix": "v1/code",
+    "ops": {
+      "Execute": {
+        "verb": "POST",
+        "route": "execute",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/code/execute"
+      }
+    }
+  },
   "CompletionController.cs": {
     "route_prefix": "v1",
     "ops": {
@@ -8,17 +384,29 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": "CompletionRequest",
-        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
         "summary": "Routes a completion request to whichever AI provider/model best fits, normalising the response. POST https://api.web6.oasisomniverse.one/v1/complete"
       },
-      "OpenServModels": {
-        "verb": "GET",
-        "route": "openserv/models",
+      "CompleteStream": {
+        "verb": "POST",
+        "route": "complete/stream",
         "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<OpenServModel>" },
-        "summary": "Lists the models reachable through the OpenServ provider (provider: \"openserv\"), i.e. the full SERV catalog spanning OpenAI, Anthropic, Google, xAI, Qwen and DeepSeek behind one SERV_API_KEY. GET https://api.web6.oasisomniverse.one/v1/openserv/models"
+        "responseType": null,
+        "summary": "POST /v1/complete/stream"
+      },
+      "CompleteToolResult": {
+        "verb": "POST",
+        "route": "complete/tool-result",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/complete/tool-result"
       },
       "Embed": {
         "verb": "POST",
@@ -26,35 +414,362 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": "EmbeddingRequest",
-        "responseType": { "wrapper": null, "inner": "EmbeddingResponse" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "EmbeddingResponse"
+        },
         "summary": "Generates embeddings for one or more texts via the configured provider (OpenAI, Cohere, or HuggingFace). Returns float arrays suitable for semantic search, RAG pipelines, or cosine-similarity comparisons. POST https://api.web6.oasisomniverse.one/v1/embed"
+      },
+      "OpenServModels": {
+        "verb": "GET",
+        "route": "openserv/models",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<OpenServModel>"
+        },
+        "summary": "Lists the models reachable through the OpenServ provider (provider: \"openserv\"), i.e. the full SERV catalog spanning OpenAI, Anthropic, Google, xAI, Qwen and DeepSeek behind one SERV_API_KEY. GET https://api.web6.oasisomniverse.one/v1/openserv/models"
+      }
+    }
+  },
+  "ContextController.cs": {
+    "route_prefix": "v1/context",
+    "ops": {
+      "GetAvatarContext": {
+        "verb": "GET",
+        "route": "avatar/{avatarId}",
+        "routeParams": [
+          {
+            "name": "avatarId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/context/avatar/{avatarId}"
+      }
+    }
+  },
+  "DidController.cs": {
+    "route_prefix": "v1/auth",
+    "ops": {
+      "CreateDid": {
+        "verb": "POST",
+        "route": "did",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "DidRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "DidDocument"
+        },
+        "summary": "Creates or retrieves the DID document for the authenticated avatar. POST https://api.web6.oasisomniverse.one/v1/auth/did"
+      },
+      "IssueVc": {
+        "verb": "POST",
+        "route": "vc",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "VcIssueRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "VerifiableCredential"
+        },
+        "summary": "Issues a W3C Verifiable Credential for the authenticated avatar. POST https://api.web6.oasisomniverse.one/v1/auth/vc"
+      },
+      "ResolveDid": {
+        "verb": "GET",
+        "route": "did/{did}",
+        "routeParams": [
+          {
+            "name": "did",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "DidDocument"
+        },
+        "summary": "Resolves a DID document from the Universal Resolver. GET https://api.web6.oasisomniverse.one/v1/auth/did/{did}"
+      },
+      "VerifyVc": {
+        "verb": "POST",
+        "route": "vc/verify",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "VcVerifyRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Verifies a Verifiable Credential issued by this system. Returns { valid: boolean }. POST https://api.web6.oasisomniverse.one/v1/auth/vc/verify"
+      }
+    }
+  },
+  "DiscoveryController.cs": {
+    "route_prefix": "",
+    "ops": {
+      "GetMcpManifest": {
+        "verb": "GET",
+        "route": ".well-known/mcp.json",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /.well-known/mcp.json"
+      },
+      "GetAgentManifest": {
+        "verb": "GET",
+        "route": ".well-known/agent.json",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /.well-known/agent.json"
+      }
+    }
+  },
+  "DocumentsController.cs": {
+    "route_prefix": "v1/documents",
+    "ops": {
+      "ParseDocument": {
+        "verb": "POST",
+        "route": "parse",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/documents/parse"
+      }
+    }
+  },
+  "EmbeddingController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Embed": {
+        "verb": "POST",
+        "route": "embed",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "EmbeddingRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "EmbeddingResponse"
+        },
+        "summary": "Generates embeddings for one or more texts via the configured provider (OpenAI, Cohere, or HuggingFace). Returns float arrays suitable for semantic search, RAG pipelines, or cosine-similarity comparisons. POST https://api.web6.oasisomniverse.one/v1/embed"
+      }
+    }
+  },
+  "EstimateController.cs": {
+    "route_prefix": "v1/estimate",
+    "ops": {
+      "Estimate": {
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/estimate"
+      }
+    }
+  },
+  "ExternalMemoryController.cs": {
+    "route_prefix": "v1/memory/external",
+    "ops": {
+      "Add": {
+        "verb": "POST",
+        "route": "add",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "ExternalMemoryAddRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "void"
+        },
+        "summary": "Adds a memory to the specified external memory provider. POST https://api.web6.oasisomniverse.one/v1/memory/external/add"
+      },
+      "Delete": {
+        "verb": "DELETE",
+        "route": "{provider}/{id}",
+        "routeParams": [
+          {
+            "name": "provider",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "void"
+        },
+        "summary": "Deletes a specific memory entry from an external memory provider. DELETE https://api.web6.oasisomniverse.one/v1/memory/external/{provider}/{id}"
+      },
+      "GetProviders": {
+        "verb": "GET",
+        "route": "providers",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<string>"
+        },
+        "summary": "Lists all external memory providers registered and configured via environment variables (Mem0, Zep, Letta, LangMem, Graphiti, Redis Vector). GET https://api.web6.oasisomniverse.one/v1/memory/external/providers"
+      },
+      "Search": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "ExternalMemorySearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ExternalMemorySearchResult>"
+        },
+        "summary": "Searches one or more external memory providers for memories relevant to the query. POST https://api.web6.oasisomniverse.one/v1/memory/external/search"
+      }
+    }
+  },
+  "ExtractionController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Extract": {
+        "verb": "POST",
+        "route": "extract",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/extract"
       }
     }
   },
   "FahrnSolveController.cs": {
     "route_prefix": "v1/fahrn",
     "ops": {
+      "BudgetEstimate": {
+        "verb": "GET",
+        "route": "budget-estimate",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "taskType",
+            "type": "string",
+            "optional": true
+          },
+          {
+            "name": "mode",
+            "type": "string",
+            "optional": true
+          },
+          {
+            "name": "agentCount",
+            "type": "int",
+            "optional": true
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "BudgetEstimateResponse"
+        },
+        "summary": "Dry-run budget estimate \u00e2\u20ac\u201d returns projected token count and cost for a dispatch using the model pricing table, without making any actual agent calls. GET https://api.web6.oasisomniverse.one/v1/fahrn/budget-estimate"
+      },
       "Solve": {
         "verb": "POST",
         "route": "solve",
         "routeParams": [],
         "queryParams": [],
         "requestType": "FahrnSolveRequest",
-        "responseType": { "wrapper": null, "inner": "FahrnSolveResponse" },
-        "summary": "FAHRN hero endpoint — full pipeline in one call: auto-classify task type, inject avatar context (Web4+Web5), look up Holonic BRAID graph, dispatch to the reasoning network, return the answer with full reasoning trace and telemetry. POST https://api.web6.oasisomniverse.one/v1/fahrn/solve"
-      },
-      "BudgetEstimate": {
-        "verb": "GET",
-        "route": "budget-estimate",
+        "responseType": {
+          "wrapper": null,
+          "inner": "FahrnSolveResponse"
+        },
+        "summary": "FAHRN hero endpoint \u00e2\u20ac\u201d full pipeline in one call: auto-classify task type, inject avatar context (Web4+Web5), look up Holonic BRAID graph, dispatch to the reasoning network, return the answer with full reasoning trace and telemetry. POST https://api.web6.oasisomniverse.one/v1/fahrn/solve"
+      }
+    }
+  },
+  "FinetuningController.cs": {
+    "route_prefix": "v1/fine-tuning",
+    "ops": {
+      "CreateJob": {
+        "verb": "POST",
+        "route": "jobs",
         "routeParams": [],
-        "queryParams": [
-          { "name": "taskType", "type": "string", "optional": true },
-          { "name": "mode", "type": "string", "optional": true },
-          { "name": "agentCount", "type": "int", "optional": true }
-        ],
+        "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "BudgetEstimateResponse" },
-        "summary": "Dry-run budget estimate — returns projected token count and cost for a dispatch using the model pricing table, without making any actual agent calls. GET https://api.web6.oasisomniverse.one/v1/fahrn/budget-estimate"
+        "responseType": null,
+        "summary": "POST /v1/fine-tuning/jobs"
+      },
+      "GetJob": {
+        "verb": "GET",
+        "route": "jobs/{jobId}",
+        "routeParams": [
+          {
+            "name": "jobId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/fine-tuning/jobs/{jobId}"
+      }
+    }
+  },
+  "GraphRAGController.cs": {
+    "route_prefix": "v1/graphrag",
+    "ops": {
+      "Query": {
+        "verb": "POST",
+        "route": "query",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/graphrag/query"
+      }
+    }
+  },
+  "GuardrailsController.cs": {
+    "route_prefix": "v1/guardrails",
+    "ops": {
+      "Check": {
+        "verb": "POST",
+        "route": "check",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/guardrails/check"
+      }
+    }
+  },
+  "HealthController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Check": {
+        "verb": "GET",
+        "route": "health",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Unauthenticated liveness probe. Returns { status: 'ok' | 'degraded', version, uptime }. Use for k8s readiness probes and monitoring dashboards. GET https://api.web6.oasisomniverse.one/v1/health"
       }
     }
   },
@@ -64,19 +779,35 @@
       "GetGraph": {
         "verb": "GET",
         "route": "graph/{taskType}",
-        "routeParams": [{ "name": "taskType", "type": "string" }],
+        "routeParams": [
+          {
+            "name": "taskType",
+            "type": "string"
+          }
+        ],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "HolonicBraidGraphDto" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicBraidGraphDto"
+        },
         "summary": "Looks up the shared reasoning graph already generated for a task type, if any."
       },
       "SaveGraph": {
         "verb": "POST",
         "route": "graph/{taskType}",
-        "routeParams": [{ "name": "taskType", "type": "string" }],
+        "routeParams": [
+          {
+            "name": "taskType",
+            "type": "string"
+          }
+        ],
         "queryParams": [],
         "requestType": "SaveGraphRequest",
-        "responseType": { "wrapper": null, "inner": "HolonicBraidGraphDto" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicBraidGraphDto"
+        },
         "summary": "Seeds the shared library with a reasoning graph for a task type (the \"generator\" step of the two-stage BRAID protocol)."
       }
     }
@@ -90,73 +821,179 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "HolonicMemoryHolonDto" },
-        "summary": "Returns the root Earth holon at the top of the fractal Holonic BRAID memory hierarchy (Session → Agent → User → Group → ... → Earth)."
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicMemoryHolonDto"
+        },
+        "summary": "Returns the root Earth holon at the top of the fractal Holonic BRAID memory hierarchy (Session \u00e2\u2020\u2019 Agent \u00e2\u2020\u2019 User \u00e2\u2020\u2019 Group \u00e2\u2020\u2019 ... \u00e2\u2020\u2019 Earth)."
       },
       "GetOrCreateHolon": {
         "verb": "POST",
         "route": "holons",
         "routeParams": [],
         "queryParams": [
-          { "name": "level", "type": "HolonicMemoryLevel", "optional": false },
-          { "name": "name", "type": "string", "optional": false },
-          { "name": "parentHolonId", "type": "Guid", "optional": false }
+          {
+            "name": "level",
+            "type": "HolonicMemoryLevel",
+            "optional": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "parentHolonId",
+            "type": "Guid",
+            "optional": false
+          }
         ],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "HolonicMemoryHolonDto" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "HolonicMemoryHolonDto"
+        },
         "summary": "Creates or retrieves a holon at the specified level in the fractal hierarchy.",
-        "query": ["level", "name", "parentHolonId"]
-      },
-      "SetMembraneRule": {
-        "verb": "PUT",
-        "route": "holons/{holonId}/membrane-rule",
-        "routeParams": [{ "name": "holonId", "type": "Guid" }],
-        "queryParams": [],
-        "requestType": "MembraneRule",
-        "responseType": { "wrapper": null, "inner": "bool" },
-        "summary": "Sets the membrane rule that governs which memory items are permitted to propagate upward from this holon to its parent."
-      },
-      "RecordMemory": {
-        "verb": "POST",
-        "route": "holons/{holonId}/memory",
-        "routeParams": [{ "name": "holonId", "type": "Guid" }],
-        "queryParams": [],
-        "requestType": "HolonicMemoryItem",
-        "responseType": { "wrapper": null, "inner": "bool" },
-        "summary": "Records a memory item into the specified holon."
+        "query": [
+          "level",
+          "name",
+          "parentHolonId"
+        ]
       },
       "Propagate": {
         "verb": "POST",
         "route": "holons/{childHolonId}/propagate",
-        "routeParams": [{ "name": "childHolonId", "type": "Guid" }],
+        "routeParams": [
+          {
+            "name": "childHolonId",
+            "type": "Guid"
+          }
+        ],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "int" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "int"
+        },
         "summary": "Propagates whatever the child holon's membrane rule permits up to its parent (a single hop)."
       },
       "PropagateUp": {
         "verb": "POST",
         "route": "holons/{childHolonId}/propagate-up",
-        "routeParams": [{ "name": "childHolonId", "type": "Guid" }],
+        "routeParams": [
+          {
+            "name": "childHolonId",
+            "type": "Guid"
+          }
+        ],
         "queryParams": [
-          { "name": "levels", "type": "int", "optional": true }
+          {
+            "name": "levels",
+            "type": "int",
+            "optional": true
+          }
         ],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "int" },
-        "summary": "Multi-hop upward propagation — propagates permitted memory items up the fractal hierarchy for up to N hops. Pass levels=2147483647 to propagate all the way to Earth."
+        "responseType": {
+          "wrapper": null,
+          "inner": "int"
+        },
+        "summary": "Multi-hop upward propagation \u00e2\u20ac\u201d propagates permitted memory items up the fractal hierarchy for up to N hops. Pass levels=2147483647 to propagate all the way to Earth."
+      },
+      "IngestDocuments": {
+        "verb": "POST",
+        "route": "holons/{holonId}/documents",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/holonic-memory/holons/{holonId}/documents"
+      },
+      "RecordMemory": {
+        "verb": "POST",
+        "route": "holons/{holonId}/memory",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "HolonicMemoryItem",
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": "Records a memory item into the specified holon."
       },
       "SearchMemory": {
         "verb": "GET",
         "route": "holons/{holonId}/memory/search",
-        "routeParams": [{ "name": "holonId", "type": "Guid" }],
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "Guid"
+          }
+        ],
         "queryParams": [
-          { "name": "q", "type": "string", "optional": false },
-          { "name": "topK", "type": "int", "optional": true },
-          { "name": "provider", "type": "string", "optional": true }
+          {
+            "name": "q",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "topK",
+            "type": "int",
+            "optional": true
+          },
+          {
+            "name": "provider",
+            "type": "string",
+            "optional": true
+          }
         ],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<MemorySearchResult>" },
-        "summary": "Semantic search across all memory items in a holon — returns the top-K items most similar to the query string using cosine similarity over stored embedding vectors."
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<MemorySearchResult>"
+        },
+        "summary": "Semantic search across all memory items in a holon \u00e2\u20ac\u201d returns the top-K items most similar to the query string using cosine similarity over stored embedding vectors."
+      },
+      "SetMembraneRule": {
+        "verb": "PUT",
+        "route": "holons/{holonId}/membrane-rule",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "MembraneRule",
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": "Sets the membrane rule that governs which memory items are permitted to propagate upward from this holon to its parent."
+      },
+      "SemanticSearchMemory": {
+        "verb": "GET",
+        "route": "holons/{holonId}/memory/semantic-search",
+        "routeParams": [
+          {
+            "name": "holonId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/holonic-memory/holons/{holonId}/memory/semantic-search"
       }
     }
   },
@@ -169,180 +1006,65 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": "ImageGenerationRequest",
-        "responseType": { "wrapper": null, "inner": "ImageGenerationResponse" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "ImageGenerationResponse"
+        },
         "summary": "Generates an image via the requested provider (StabilityAI or OpenAI). POST https://api.web6.oasisomniverse.one/v1/images/generate"
       }
     }
   },
-  "OrchestratorController.cs": {
-    "route_prefix": "v1/orchestrators",
+  "KeysController.cs": {
+    "route_prefix": "v1/keys",
     "ops": {
-      "RegisterAdapter": {
+      "CreateKey": {
         "verb": "POST",
         "route": "",
         "routeParams": [],
         "queryParams": [],
-        "requestType": "OrchestratorAdapterConfig",
-        "responseType": { "wrapper": null, "inner": "OrchestratorAdapterConfig" },
-        "summary": "Registers an external orchestrator (MCP, A2A, LangChain, AutoGen, CrewAI, Semantic Kernel, or any generic webhook) with WEB6's unified interface."
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/keys"
       },
-      "GetAdapters": {
+      "GetKeys": {
         "verb": "GET",
         "route": "",
         "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<OrchestratorAdapterConfig>" },
-        "summary": "Lists all registered orchestrator adapters."
+        "responseType": null,
+        "summary": "GET /v1/keys"
       },
-      "Invoke": {
-        "verb": "POST",
-        "route": "invoke",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "OrchestratorInvokeRequest",
-        "responseType": { "wrapper": null, "inner": "OrchestratorInvokeResponse" },
-        "summary": "Invokes a registered orchestrator adapter with a payload."
-      }
-    }
-  },
-  "ReasoningNetworkController.cs": {
-    "route_prefix": "v1/reasoning-network",
-    "ops": {
-      "RegisterAgent": {
-        "verb": "POST",
-        "route": "agents",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "ReasoningAgentMetadata",
-        "responseType": { "wrapper": null, "inner": "ReasoningAgentMetadata" },
-        "summary": "Registers a new reasoning agent (e.g. a specific provider/model) with FAHRN."
-      },
-      "GetAgents": {
-        "verb": "GET",
-        "route": "agents",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<ReasoningAgentMetadata>" },
-        "summary": "Lists every reasoning agent currently registered with FAHRN, with its live composite scoring metadata."
-      },
-      "SeedOpenServAgents": {
-        "verb": "POST",
-        "route": "agents/seed-openserv",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<ReasoningAgentMetadata>" },
-        "summary": "Seeds FAHRN with one reasoning agent per model in the OpenServ SERV catalog. Safe to call repeatedly. POST https://api.web6.oasisomniverse.one/v1/reasoning-network/agents/seed-openserv"
-      },
-      "Dispatch": {
-        "verb": "POST",
-        "route": "dispatch",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "DispatchRequest",
-        "responseType": { "wrapper": null, "inner": "DispatchResult" },
-        "summary": "Dispatches a problem to the reasoning network. The controller agent scores eligible agents, picks Serial/Parallel/Decomposed/Debate/Voting execution, runs loop detection, assembles the final Mermaid plan and updates every involved agent's score via EMA before returning."
-      }
-    }
-  },
-  "DidController.cs": {
-    "route_prefix": "v1/auth",
-    "ops": {
-      "CreateDid": {
-        "verb": "POST",
-        "route": "did",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "DidRequest",
-        "responseType": { "wrapper": null, "inner": "DidDocument" },
-        "summary": "Creates or retrieves the DID document for the authenticated avatar. POST https://api.web6.oasisomniverse.one/v1/auth/did"
-      },
-      "ResolveDid": {
-        "verb": "GET",
-        "route": "did/{did}",
-        "routeParams": [{ "name": "did", "type": "string" }],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "DidDocument" },
-        "summary": "Resolves a DID document from the Universal Resolver. GET https://api.web6.oasisomniverse.one/v1/auth/did/{did}"
-      },
-      "IssueVc": {
-        "verb": "POST",
-        "route": "vc",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "VcIssueRequest",
-        "responseType": { "wrapper": null, "inner": "VerifiableCredential" },
-        "summary": "Issues a W3C Verifiable Credential for the authenticated avatar. POST https://api.web6.oasisomniverse.one/v1/auth/vc"
-      },
-      "VerifyVc": {
-        "verb": "POST",
-        "route": "vc/verify",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "VcVerifyRequest",
-        "responseType": { "wrapper": null, "inner": "object" },
-        "summary": "Verifies a Verifiable Credential issued by this system. Returns { valid: boolean }. POST https://api.web6.oasisomniverse.one/v1/auth/vc/verify"
-      }
-    }
-  },
-  "ExternalMemoryController.cs": {
-    "route_prefix": "v1/memory/external",
-    "ops": {
-      "GetProviders": {
-        "verb": "GET",
-        "route": "providers",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<string>" },
-        "summary": "Lists all external memory providers registered and configured via environment variables (Mem0, Zep, Letta, LangMem, Graphiti, Redis Vector). GET https://api.web6.oasisomniverse.one/v1/memory/external/providers"
-      },
-      "Search": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "ExternalMemorySearchRequest",
-        "responseType": { "wrapper": null, "inner": "List<ExternalMemorySearchResult>" },
-        "summary": "Searches one or more external memory providers for memories relevant to the query. POST https://api.web6.oasisomniverse.one/v1/memory/external/search"
-      },
-      "Add": {
-        "verb": "POST",
-        "route": "add",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "ExternalMemoryAddRequest",
-        "responseType": { "wrapper": null, "inner": "void" },
-        "summary": "Adds a memory to the specified external memory provider. POST https://api.web6.oasisomniverse.one/v1/memory/external/add"
-      },
-      "Delete": {
+      "DeleteKey": {
         "verb": "DELETE",
-        "route": "{provider}/{id}",
+        "route": "{provider}",
         "routeParams": [
-          { "name": "provider", "type": "string" },
-          { "name": "id", "type": "string" }
+          {
+            "name": "provider",
+            "type": "string"
+          }
         ],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "void" },
-        "summary": "Deletes a specific memory entry from an external memory provider. DELETE https://api.web6.oasisomniverse.one/v1/memory/external/{provider}/{id}"
+        "responseType": null,
+        "summary": "DELETE /v1/keys/{provider}"
       }
     }
   },
   "MLNetController.cs": {
     "route_prefix": "v1/ml",
     "ops": {
-      "ListModels": {
-        "verb": "GET",
-        "route": "models",
+      "AnalyseSentiment": {
+        "verb": "POST",
+        "route": "sentiment",
         "routeParams": [],
         "queryParams": [],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<object>" },
-        "summary": "Lists deployed in-process ML.NET models and their capabilities (task_classifier, loop_anomaly, sentiment_analysis). GET https://api.web6.oasisomniverse.one/v1/ml/models"
+        "requestType": "MLClassifyRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Analyses sentiment of the provided text. Returns { sentiment: 'Positive' | 'Neutral' | 'Negative' }. POST https://api.web6.oasisomniverse.one/v1/ml/sentiment"
       },
       "ClassifyTask": {
         "verb": "POST",
@@ -350,17 +1072,23 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": "MLClassifyRequest",
-        "responseType": { "wrapper": null, "inner": "object" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
         "summary": "Classifies the task type of a problem string using the in-process ML.NET model. Returns { taskType: string }. POST https://api.web6.oasisomniverse.one/v1/ml/classify-task"
       },
-      "AnalyseSentiment": {
-        "verb": "POST",
-        "route": "sentiment",
+      "ListModels": {
+        "verb": "GET",
+        "route": "models",
         "routeParams": [],
         "queryParams": [],
-        "requestType": "MLClassifyRequest",
-        "responseType": { "wrapper": null, "inner": "object" },
-        "summary": "Analyses sentiment of the provided text. Returns { sentiment: 'Positive' | 'Neutral' | 'Negative' }. POST https://api.web6.oasisomniverse.one/v1/ml/sentiment"
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<object>"
+        },
+        "summary": "Lists deployed in-process ML.NET models and their capabilities (task_classifier, loop_anomaly, sentiment_analysis). GET https://api.web6.oasisomniverse.one/v1/ml/models"
       },
       "TrainTaskClassifier": {
         "verb": "POST",
@@ -368,8 +1096,352 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": "MLTrainRequest",
-        "responseType": { "wrapper": null, "inner": "object" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
         "summary": "Trains the task classifier from a list of labelled problem/taskType pairs (minimum 10 samples required). POST https://api.web6.oasisomniverse.one/v1/ml/train"
+      }
+    }
+  },
+  "MemoryController.cs": {
+    "route_prefix": "v1/memory",
+    "ops": {
+      "Store": {
+        "verb": "POST",
+        "route": "store",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/memory/store"
+      },
+      "Query": {
+        "verb": "POST",
+        "route": "query",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/memory/query"
+      }
+    }
+  },
+  "ModelsController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "List": {
+        "verb": "GET",
+        "route": "models",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "plan",
+            "type": "string",
+            "optional": true
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ModelCatalogueEntry>"
+        },
+        "summary": "Returns the full WEB6 model catalogue with pricing, plan tier, and provider mapping. Pass ?plan=Free|Bronze|Silver|Gold to filter. GET https://api.web6.oasisomniverse.one/v1/models"
+      },
+      "Get": {
+        "verb": "GET",
+        "route": "models/{modelId}",
+        "routeParams": [
+          {
+            "name": "modelId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "ModelCatalogueEntry"
+        },
+        "summary": "Returns full details for a single model by its catalogue ID. GET https://api.web6.oasisomniverse.one/v1/models/{modelId}"
+      }
+    }
+  },
+  "ModerationController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Moderate": {
+        "verb": "POST",
+        "route": "moderation",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/moderation"
+      }
+    }
+  },
+  "OpenAICompatController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "ChatCompletions": {
+        "verb": "POST",
+        "route": "chat/completions",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/chat/completions"
+      }
+    }
+  },
+  "OrchestrateController.cs": {
+    "route_prefix": "v1/orchestrate",
+    "ops": {
+      "Crewai": {
+        "verb": "POST",
+        "route": "crewai",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "CrewAIRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Dispatches a CrewAI task list through WEB6 AI routing \u00e2\u20ac\u201d no CrewAI SDK required. Process: sequential (default) or hierarchical. POST https://api.web6.oasisomniverse.one/v1/orchestrate/crewai"
+      },
+      "Autogen": {
+        "verb": "POST",
+        "route": "autogen",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "AutoGenRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Initiates a Microsoft AutoGen multi-agent conversation through WEB6 \u00e2\u20ac\u201d no AutoGen SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/autogen"
+      },
+      "Langgraph": {
+        "verb": "POST",
+        "route": "langgraph",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "LangGraphRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Executes a LangGraph node via WEB6 and returns the updated graph state \u00e2\u20ac\u201d no LangGraph SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/langgraph"
+      }
+    }
+  },
+  "OrchestratorController.cs": {
+    "route_prefix": "v1/orchestrate",
+    "ops": {
+      "CrewAI": {
+        "verb": "POST",
+        "route": "crewai",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "CrewAIRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Dispatches a CrewAI task list through WEB6 AI routing \u00e2\u20ac\u201d no CrewAI SDK required. Process: sequential (default) or hierarchical. POST https://api.web6.oasisomniverse.one/v1/orchestrate/crewai"
+      },
+      "AutoGen": {
+        "verb": "POST",
+        "route": "autogen",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "AutoGenRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Initiates a Microsoft AutoGen multi-agent conversation through WEB6 \u00e2\u20ac\u201d no AutoGen SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/autogen"
+      },
+      "LangGraph": {
+        "verb": "POST",
+        "route": "langgraph",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "LangGraphRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "CompletionResponse"
+        },
+        "summary": "Executes a LangGraph node via WEB6 and returns the updated graph state \u00e2\u20ac\u201d no LangGraph SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/langgraph"
+      }
+    }
+  },
+  "PromptController.cs": {
+    "route_prefix": "v1/prompts",
+    "ops": {
+      "Optimise": {
+        "verb": "POST",
+        "route": "optimise",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/prompts/optimise"
+      }
+    }
+  },
+  "ProvidersController.cs": {
+    "route_prefix": "v1/providers",
+    "ops": {
+      "List": {
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/providers"
+      }
+    }
+  },
+  "ReasoningNetworkController.cs": {
+    "route_prefix": "v1/reasoning-network",
+    "ops": {
+      "Dispatch": {
+        "verb": "POST",
+        "route": "dispatch",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "DispatchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "DispatchResult"
+        },
+        "summary": "Dispatches a problem to the reasoning network. The controller agent scores eligible agents, picks Serial/Parallel/Decomposed/Debate/Voting execution, runs loop detection, assembles the final Mermaid plan and updates every involved agent's score via EMA before returning."
+      },
+      "GetAgents": {
+        "verb": "GET",
+        "route": "agents",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ReasoningAgentMetadata>"
+        },
+        "summary": "Lists every reasoning agent currently registered with FAHRN, with its live composite scoring metadata."
+      },
+      "RegisterAgent": {
+        "verb": "POST",
+        "route": "agents",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "ReasoningAgentMetadata",
+        "responseType": {
+          "wrapper": null,
+          "inner": "ReasoningAgentMetadata"
+        },
+        "summary": "Registers a new reasoning agent (e.g. a specific provider/model) with FAHRN."
+      },
+      "SeedOpenServAgents": {
+        "verb": "POST",
+        "route": "agents/seed-openserv",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<ReasoningAgentMetadata>"
+        },
+        "summary": "Seeds FAHRN with one reasoning agent per model in the OpenServ SERV catalog. Safe to call repeatedly. POST https://api.web6.oasisomniverse.one/v1/reasoning-network/agents/seed-openserv"
+      },
+      "GetAgentSkills": {
+        "verb": "GET",
+        "route": "agents/{agentId}/skills/{category}",
+        "routeParams": [
+          {
+            "name": "agentId",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/reasoning-network/agents/{agentId}/skills/{category}"
+      },
+      "EvolveAgentSkill": {
+        "verb": "POST",
+        "route": "agents/{agentId}/skills/{category}/evolve",
+        "routeParams": [
+          {
+            "name": "agentId",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/reasoning-network/agents/{agentId}/skills/{category}/evolve"
+      }
+    }
+  },
+  "RerankController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Rerank": {
+        "verb": "POST",
+        "route": "rerank",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/rerank"
+      }
+    }
+  },
+  "SearchController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Search": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/search"
+      }
+    }
+  },
+  "SpeechController.cs": {
+    "route_prefix": "v1/audio",
+    "ops": {
+      "TextToSpeech": {
+        "verb": "POST",
+        "route": "speech",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/audio/speech"
+      },
+      "Transcribe": {
+        "verb": "POST",
+        "route": "transcriptions",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/audio/transcriptions"
       }
     }
   },
@@ -381,11 +1453,41 @@
         "route": "history",
         "routeParams": [],
         "queryParams": [
-          { "name": "limit", "type": "int", "optional": true }
+          {
+            "name": "limit",
+            "type": "int",
+            "optional": true
+          }
         ],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<TelemetryEvent>" },
-        "summary": "Returns the last N telemetry events (default 50, max 500) — per-request provider, model, latency, token count, cost, FAHRN mode, BRAID graph reuse, avatar context injection, cache hits and loop detection. GET https://api.web6.oasisomniverse.one/v1/telemetry/history"
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<TelemetryEvent>"
+        },
+        "summary": "Returns the last N telemetry events (default 50, max 500) \u00e2\u20ac\u201d per-request provider, model, latency, token count, cost, FAHRN mode, BRAID graph reuse, avatar context injection, cache hits and loop detection. GET https://api.web6.oasisomniverse.one/v1/telemetry/history"
+      },
+      "Stream": {
+        "verb": "GET",
+        "route": "stream",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/telemetry/stream"
+      }
+    }
+  },
+  "TranslationController.cs": {
+    "route_prefix": "v1",
+    "ops": {
+      "Translate": {
+        "verb": "POST",
+        "route": "translate",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/translate"
       }
     }
   },
@@ -398,127 +1500,248 @@
         "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "AvatarUsageSummary" },
+        "responseType": {
+          "wrapper": null,
+          "inner": "AvatarUsageSummary"
+        },
         "summary": "Returns current month spend (USD) and today's token count against configured limits for the authenticated avatar. GET https://api.web6.oasisomniverse.one/v1/usage"
       }
     }
   },
-  "ProvidersController.cs": {
-    "route_prefix": "v1/providers",
+  "VideoController.cs": {
+    "route_prefix": "v1/video",
     "ops": {
-      "Status": {
-        "verb": "GET",
-        "route": "status",
+      "Generate": {
+        "verb": "POST",
+        "route": "generate",
         "routeParams": [],
-        "queryParams": [
-          { "name": "refresh", "type": "bool", "optional": true }
-        ],
+        "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "object" },
-        "summary": "Returns the last-known health and latency for every configured AI provider. Results are cached for 60 seconds; pass ?refresh=true to force an immediate re-ping. GET https://api.web6.oasisomniverse.one/v1/providers/status"
+        "responseType": null,
+        "summary": "POST /v1/video/generate"
       }
     }
   },
-  "HealthController.cs": {
+  "WebSocketSessionController.cs": {
     "route_prefix": "v1",
     "ops": {
-      "Health": {
+      "GetSession": {
         "verb": "GET",
-        "route": "health",
+        "route": "ws/session",
         "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "object" },
-        "summary": "Unauthenticated liveness probe. Returns { status: 'ok' | 'degraded', version, uptime }. Use for k8s readiness probes and monitoring dashboards. GET https://api.web6.oasisomniverse.one/v1/health"
+        "responseType": null,
+        "summary": "GET /v1/ws/session"
       }
     }
   },
-  "ModelCatalogueController.cs": {
-    "route_prefix": "v1",
+  "AgentController.cs": {
+    "route_prefix": "v1/agent",
     "ops": {
-      "ListModels": {
-        "verb": "GET",
-        "route": "models",
+      "Feedback": {
+        "verb": "POST",
+        "route": "feedback",
         "routeParams": [],
-        "queryParams": [
-          { "name": "plan", "type": "string", "optional": true }
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/agent/feedback"
+      },
+      "Run": {
+        "verb": "POST",
+        "route": "run",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/agent/run"
+      }
+    }
+  },
+  "ChannelsController.cs": {
+    "route_prefix": "v1/channels",
+    "ops": {
+      "ListBindings": {
+        "verb": "GET",
+        "route": "webhooks/bindings",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/channels/webhooks/bindings"
+      },
+      "DeleteBinding": {
+        "verb": "DELETE",
+        "route": "webhooks/bindings/{bindingId}",
+        "routeParams": [
+          {
+            "name": "bindingId",
+            "type": "string"
+          }
         ],
-        "requestType": null,
-        "responseType": { "wrapper": null, "inner": "List<ModelCatalogueEntry>" },
-        "summary": "Returns the full WEB6 model catalogue with pricing, plan tier, and provider mapping. Pass ?plan=Free|Bronze|Silver|Gold to filter. GET https://api.web6.oasisomniverse.one/v1/models"
-      },
-      "GetModel": {
-        "verb": "GET",
-        "route": "models/{modelId}",
-        "routeParams": [{ "name": "modelId", "type": "string" }],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "ModelCatalogueEntry" },
-        "summary": "Returns full details for a single model by its catalogue ID. GET https://api.web6.oasisomniverse.one/v1/models/{modelId}"
+        "responseType": null,
+        "summary": "DELETE /v1/channels/webhooks/bindings/{bindingId}"
+      },
+      "SetMemory": {
+        "verb": "PUT",
+        "route": "webhooks/bindings/{bindingId}/memory",
+        "routeParams": [
+          {
+            "name": "bindingId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "PUT /v1/channels/webhooks/bindings/{bindingId}/memory"
+      },
+      "CreateLinkCode": {
+        "verb": "POST",
+        "route": "webhooks/link-codes",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/channels/webhooks/link-codes"
+      },
+      "Receive": {
+        "verb": "GET",
+        "route": "webhooks/{channel}",
+        "routeParams": [
+          {
+            "name": "channel",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/channels/webhooks/{channel}"
+      },
+      "WebhooksByChannel": {
+        "verb": "POST",
+        "route": "webhooks/{channel}",
+        "routeParams": [
+          {
+            "name": "channel",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/channels/webhooks/{channel}"
       }
     }
   },
-  "OrchestratorsController.cs": {
-    "route_prefix": "v1/orchestrate",
+  "SchedulesController.cs": {
+    "route_prefix": "v1/schedules",
     "ops": {
-      "CrewAI": {
+      "Create": {
         "verb": "POST",
-        "route": "crewai",
+        "route": "",
         "routeParams": [],
         "queryParams": [],
-        "requestType": "CrewAIRequest",
-        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
-        "summary": "Dispatches a CrewAI task list through WEB6 AI routing — no CrewAI SDK required. Process: sequential (default) or hierarchical. POST https://api.web6.oasisomniverse.one/v1/orchestrate/crewai"
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/schedules"
       },
-      "AutoGen": {
-        "verb": "POST",
-        "route": "autogen",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "AutoGenRequest",
-        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
-        "summary": "Initiates a Microsoft AutoGen multi-agent conversation through WEB6 — no AutoGen SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/autogen"
-      },
-      "LangGraph": {
-        "verb": "POST",
-        "route": "langgraph",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "LangGraphRequest",
-        "responseType": { "wrapper": null, "inner": "CompletionResponse" },
-        "summary": "Executes a LangGraph node via WEB6 and returns the updated graph state — no LangGraph SDK required. POST https://api.web6.oasisomniverse.one/v1/orchestrate/langgraph"
-      }
-    }
-  },
-  "A2AController.cs": {
-    "route_prefix": "a2a",
-    "ops": {
-      "SendTask": {
-        "verb": "POST",
-        "route": "tasks/send",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "A2ATaskSendRequest",
-        "responseType": { "wrapper": null, "inner": "A2ATask" },
-        "summary": "Submit a task to the OASIS FAHRN agent via the Google A2A protocol. Runs FAHRN solve async and returns an A2ATask with status. POST https://api.web6.oasisomniverse.one/a2a/tasks/send"
-      },
-      "GetTask": {
+      "List": {
         "verb": "GET",
-        "route": "tasks/{id}",
-        "routeParams": [{ "name": "id", "type": "string" }],
+        "route": "",
+        "routeParams": [],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "A2ATask" },
-        "summary": "Get A2A task status by id. GET https://api.web6.oasisomniverse.one/a2a/tasks/{id}"
+        "responseType": null,
+        "summary": "GET /v1/schedules"
       },
-      "CancelTask": {
-        "verb": "POST",
-        "route": "tasks/{id}/cancel",
-        "routeParams": [{ "name": "id", "type": "string" }],
+      "GetById": {
+        "verb": "GET",
+        "route": "{id}",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
         "queryParams": [],
         "requestType": null,
-        "responseType": { "wrapper": null, "inner": "void" },
-        "summary": "Cancel a running A2A task. POST https://api.web6.oasisomniverse.one/a2a/tasks/{id}/cancel"
+        "responseType": null,
+        "summary": "GET /v1/schedules/{id}"
+      },
+      "Update": {
+        "verb": "PUT",
+        "route": "{id}",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "PUT /v1/schedules/{id}"
+      },
+      "DeleteById": {
+        "verb": "DELETE",
+        "route": "{id}",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "DELETE /v1/schedules/{id}"
+      },
+      "Pause": {
+        "verb": "POST",
+        "route": "{id}/pause",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/schedules/{id}/pause"
+      },
+      "Resume": {
+        "verb": "POST",
+        "route": "{id}/resume",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "POST /v1/schedules/{id}/resume"
+      },
+      "Runs": {
+        "verb": "GET",
+        "route": "{id}/runs",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": null,
+        "summary": "GET /v1/schedules/{id}/runs"
       }
     }
   }
